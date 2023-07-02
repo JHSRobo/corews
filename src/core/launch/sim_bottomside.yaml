@@ -1,0 +1,13 @@
+launch:
+
+# Node for testing GPIO Control with GUI.
+- node:
+    pkg: "rov_sim"
+    exec: "gpio_control"
+    name: "gpio_control"
+
+# Node for testing GPIO Control with GUI.
+- node:
+    pkg: "rov_sim"
+    exec: "depth_sensor"
+    name: "depth_sensor"

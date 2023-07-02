@@ -1,5 +1,6 @@
 /home/jhsrobo/corews/install/core/share/core//launch/opside.yaml
 /home/jhsrobo/corews/install/core/share/core//launch/topside.yaml
+/home/jhsrobo/corews/install/core/share/core//launch/sim_bottomside.yaml
 /home/jhsrobo/corews/install/core/share/core//launch/bottomside.yaml
 /home/jhsrobo/corews/install/core/share/ament_index/resource_index/rosidl_interfaces/core
 /home/jhsrobo/corews/install/core/include/core/core/msg/rosidl_generator_c__visibility_control.h
