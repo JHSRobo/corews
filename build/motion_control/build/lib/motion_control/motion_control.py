@@ -36,9 +36,9 @@ class MotionController(Node):
         sensitivity_bounds.to_value = 1.0
         sensitivity_bounds.step = 0.01
         sensitivity_descriptor = ParameterDescriptor(floating_point_range = [sensitivity_bounds])
-        self.declare_parameter('lateral_sensitivity', 0.3, sensitivity_descriptor)
-        self.declare_parameter('vertical_sensitivity', 0.33, sensitivity_descriptor)
-        self.declare_parameter('angular_sensitivity', 0.33, sensitivity_descriptor)
+        self.declare_parameter('lateral_sensitivity', 0.5, sensitivity_descriptor)
+        self.declare_parameter('vertical_sensitivity', 0.5, sensitivity_descriptor)
+        self.declare_parameter('angular_sensitivity', 0.5, sensitivity_descriptor)
         self.declare_parameter('thruster_status', False)
 
     def vector_callback(self, v):
@@ -52,9 +52,6 @@ class MotionController(Node):
         linearY = v.linear.y * vertical_sensitivity
         linearZ = v.linear.z * lateral_sensitivity
         angularZ = v.angular.z * angular_sensitivity
-
-        # Debug line
-        self.log.info(f'linearY: {linearY}')
 
         # TEMPORARY: Turns vectors into thruster effort values.
         # Will be changed in advanced MoCo Rewrite
