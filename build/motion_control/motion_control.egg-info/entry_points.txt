@@ -1,0 +1,3 @@
+[console_scripts]
+motion_control = motion_control.motion_control:main
+

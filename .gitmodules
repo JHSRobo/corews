@@ -1,0 +1,3 @@
+[submodule "src/motion_control"]
+	path = src/motion_control
+	url = https://github.com/JHSRobo/motion_control

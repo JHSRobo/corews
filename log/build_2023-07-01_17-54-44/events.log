@@ -1,0 +1,192 @@
+[0.000000] (-) TimerEvent: {}
+[0.000341] (core) JobQueued: {'identifier': 'core', 'dependencies': OrderedDict()}
+[0.000369] (motion_control) JobQueued: {'identifier': 'motion_control', 'dependencies': OrderedDict([('core', '/home/jhsrobo/corews/install/core')])}
+[0.000578] (core) JobStarted: {'identifier': 'core'}
+[0.008305] (core) JobProgress: {'identifier': 'core', 'progress': 'cmake'}
+[0.009064] (core) JobProgress: {'identifier': 'core', 'progress': 'build'}
+[0.009094] (core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jhsrobo/corews/build/core', '--', '-j2', '-l2'], 'cwd': '/home/jhsrobo/corews/build/core', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jhsrobo'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jhsrobo/corews/install/core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jhsrobo'), ('OLDPWD', '/home/jhsrobo/corews/scripts'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1390'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jhsrobo/corews/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jhsrobo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jhsrobo'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/JHSRobo:@/tmp/.ICE-unix/1137,unix/JHSRobo:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d968be64_3640_4467_b927_79d5574714ba'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.0WIE71'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.1474'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/home/jhsrobo/corews/install/motion_control:/home/jhsrobo/corews/install/core:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jhsrobo/corews/build/core'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jhsrobo/corews/install/core:/home/jhsrobo/corews/install/motion_control:/opt/ros/humble')]), 'shell': False}
+[0.055334] (core) StdoutLine: {'line': b'[ 12%] Built target core__rosidl_generator_c\n'}
+[0.055493] (core) StdoutLine: {'line': b'[ 12%] Built target core__cpp\n'}
+[0.067794] (core) StdoutLine: {'line': b'[ 22%] Built target core__rosidl_typesupport_cpp\n'}
+[0.082442] (core) StdoutLine: {'line': b'[ 22%] Built target ament_cmake_python_copy_core\n'}
+[0.084607] (core) StdoutLine: {'line': b'[ 32%] Built target core__rosidl_typesupport_fastrtps_c\n'}
+[0.094746] (core) StdoutLine: {'line': b'[ 41%] Built target core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.095857] (core) StdoutLine: {'line': b'[ 51%] Built target core__rosidl_typesupport_introspection_c\n'}
+[0.100385] (-) TimerEvent: {}
+[0.107814] (core) StdoutLine: {'line': b'[ 61%] Built target core__rosidl_typesupport_c\n'}
+[0.108430] (core) StdoutLine: {'line': b'[ 70%] Built target core__rosidl_typesupport_introspection_cpp\n'}
+[0.124374] (core) StdoutLine: {'line': b'[ 70%] Built target core\n'}
+[0.141223] (core) StdoutLine: {'line': b'[ 74%] Built target core__py\n'}
+[0.155296] (core) StdoutLine: {'line': b'[ 80%] Built target core__rosidl_generator_py\n'}
+[0.167971] (core) StdoutLine: {'line': b'[ 87%] Built target core__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.179875] (core) StdoutLine: {'line': b'[ 93%] Built target core__rosidl_typesupport_introspection_c__pyext\n'}
+[0.193037] (core) StdoutLine: {'line': b'[100%] Built target core__rosidl_typesupport_c__pyext\n'}
+[0.202688] (-) TimerEvent: {}
+[0.295397] (core) StdoutLine: {'line': b'running egg_info\n'}
+[0.296094] (core) StdoutLine: {'line': b'writing core.egg-info/PKG-INFO\n'}
+[0.296499] (core) StdoutLine: {'line': b'writing dependency_links to core.egg-info/dependency_links.txt\n'}
+[0.296947] (core) StdoutLine: {'line': b'writing top-level names to core.egg-info/top_level.txt\n'}
+[0.298550] (core) StdoutLine: {'line': b"reading manifest file 'core.egg-info/SOURCES.txt'\n"}
+[0.298994] (core) StdoutLine: {'line': b"writing manifest file 'core.egg-info/SOURCES.txt'\n"}
+[0.304827] (-) TimerEvent: {}
+[0.316203] (core) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_core_egg\n'}
+[0.322629] (core) CommandEnded: {'returncode': 0}
+[0.371702] (core) JobProgress: {'identifier': 'core', 'progress': 'install'}
+[0.377579] (core) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/jhsrobo/corews/build/core'], 'cwd': '/home/jhsrobo/corews/build/core', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jhsrobo'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jhsrobo/corews/install/core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jhsrobo'), ('OLDPWD', '/home/jhsrobo/corews/scripts'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1390'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/jhsrobo/corews/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'jhsrobo'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'jhsrobo'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/JHSRobo:@/tmp/.ICE-unix/1137,unix/JHSRobo:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d968be64_3640_4467_b927_79d5574714ba'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.0WIE71'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.1474'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/home/jhsrobo/corews/install/motion_control:/home/jhsrobo/corews/install/core:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jhsrobo/corews/build/core'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/jhsrobo/corews/install/core:/home/jhsrobo/corews/install/motion_control:/opt/ros/humble')]), 'shell': False}
+[0.386788] (core) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.386906] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core//launch\n'}
+[0.386948] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core//launch/opside.yaml\n'}
+[0.386990] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core//launch/topside.yaml\n'}
+[0.387034] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core//launch/bottomside.yaml\n'}
+[0.387067] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/ament_index/resource_index/rosidl_interfaces/core\n'}
+[0.387101] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core\n'}
+[0.387142] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg\n'}
+[0.387174] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.387208] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/float32_arr.h\n'}
+[0.387242] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail\n'}
+[0.387275] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__struct.h\n'}
+[0.387308] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__functions.c\n'}
+[0.387342] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__type_support.h\n'}
+[0.387375] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__functions.h\n'}
+[0.387409] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/library_path.sh\n'}
+[0.387442] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/library_path.dsv\n'}
+[0.387477] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_generator_c.so\n'}
+[0.387510] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core\n'}
+[0.387544] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg\n'}
+[0.387577] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail\n'}
+[0.387612] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__rosidl_typesupport_fastrtps_c.h\n'}
+[0.387648] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.387686] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_typesupport_fastrtps_c.so\n'}
+[0.387721] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core\n'}
+[0.387755] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg\n'}
+[0.387787] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/float32_arr.hpp\n'}
+[0.387821] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail\n'}
+[0.387855] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__traits.hpp\n'}
+[0.387889] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__struct.hpp\n'}
+[0.387922] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__builder.hpp\n'}
+[0.387955] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core\n'}
+[0.387987] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg\n'}
+[0.388021] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.388053] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail\n'}
+[0.388091] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/dds_fastrtps\n'}
+[0.388126] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.388161] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.388193] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core\n'}
+[0.388225] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg\n'}
+[0.388257] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail\n'}
+[0.388288] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__type_support.c\n'}
+[0.388319] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__rosidl_typesupport_introspection_c.h\n'}
+[0.388351] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.388382] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_typesupport_introspection_c.so\n'}
+[0.388414] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_typesupport_c.so\n'}
+[0.388445] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core\n'}
+[0.388476] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg\n'}
+[0.388509] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail\n'}
+[0.388540] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__type_support.cpp\n'}
+[0.388572] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.388604] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_typesupport_introspection_cpp.so\n'}
+[0.388635] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_typesupport_cpp.so\n'}
+[0.388667] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/pythonpath.sh\n'}
+[0.388699] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/pythonpath.dsv\n'}
+[0.388731] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core-0.0.0-py3.10.egg-info\n'}
+[0.388764] (core) StdoutLine: {'line': b'-- Installing: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[0.388797] (core) StdoutLine: {'line': b'-- Installing: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[0.388850] (core) StdoutLine: {'line': b'-- Installing: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[0.388883] (core) StdoutLine: {'line': b'-- Installing: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[0.388915] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core\n'}
+[0.388946] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/core_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.388982] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/core_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.389014] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/core_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.389049] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/msg\n'}
+[0.389081] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/msg/__init__.py\n'}
+[0.389113] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/msg/_float32_arr.py\n'}
+[0.389145] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/msg/_float32_arr_s.c\n'}
+[0.389176] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/libcore__rosidl_generator_py.so\n'}
+[0.389208] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/__init__.py\n'}
+[0.389240] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/_core_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.389272] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/_core_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.389304] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/_core_s.ep.rosidl_typesupport_c.c\n'}
+[0.404976] (-) TimerEvent: {}
+[0.407194] (core) StdoutLine: {'line': b"Listing '/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core'...\n"}
+[0.407304] (core) StdoutLine: {'line': b"Listing '/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/msg'...\n"}
+[0.410255] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/core_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.410575] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/core_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.410833] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core/core_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.411067] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/lib/libcore__rosidl_generator_py.so\n'}
+[0.411185] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/msg/Float32Arr.idl\n'}
+[0.411359] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/msg/Float32Arr.msg\n'}
+[0.411421] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/ament_index/resource_index/package_run_dependencies/core\n'}
+[0.411530] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/ament_index/resource_index/parent_prefix_path/core\n'}
+[0.411643] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/ament_prefix_path.sh\n'}
+[0.411763] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/ament_prefix_path.dsv\n'}
+[0.411812] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/path.sh\n'}
+[0.411937] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/environment/path.dsv\n'}
+[0.412051] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/local_setup.bash\n'}
+[0.412165] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/local_setup.sh\n'}
+[0.412275] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/local_setup.zsh\n'}
+[0.412382] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/local_setup.dsv\n'}
+[0.412612] (core) StdoutLine: {'line': b'-- Installing: /home/jhsrobo/corews/install/core/share/core/package.dsv\n'}
+[0.412806] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/ament_index/resource_index/packages/core\n'}
+[0.412922] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_generator_cExport.cmake\n'}
+[0.413066] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.413180] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.413318] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[0.413472] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_generator_cppExport.cmake\n'}
+[0.413589] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.413786] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[0.413887] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.414007] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.414107] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_cExport.cmake\n'}
+[0.414234] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.414335] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.414459] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.414561] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_cppExport.cmake\n'}
+[0.414687] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/core__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.414786] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_generator_pyExport.cmake\n'}
+[0.414884] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/export_core__rosidl_generator_pyExport-noconfig.cmake\n'}
+[0.414981] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/rosidl_cmake-extras.cmake\n'}
+[0.415079] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.415188] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.415287] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.415384] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.415481] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.415579] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.415672] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/coreConfig.cmake\n'}
+[0.415768] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/cmake/coreConfig-version.cmake\n'}
+[0.416233] (core) StdoutLine: {'line': b'-- Up-to-date: /home/jhsrobo/corews/install/core/share/core/package.xml\n'}
+[0.417715] (core) CommandEnded: {'returncode': 0}
+[0.480272] (core) JobEnded: {'identifier': 'core', 'rc': 0}
+[0.480813] (motion_control) JobStarted: {'identifier': 'motion_control'}
+[0.508970] (-) TimerEvent: {}
+[0.609460] (-) TimerEvent: {}
+[0.709786] (-) TimerEvent: {}
+[0.824920] (-) TimerEvent: {}
+[0.925203] (motion_control) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/motion_control', 'build', '--build-base', '/home/jhsrobo/corews/build/motion_control/build', 'install', '--record', '/home/jhsrobo/corews/build/motion_control/install.log', '--single-version-externally-managed'], 'cwd': '/home/jhsrobo/corews/src/motion_control', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jhsrobo', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jhsrobo/corews/install/core/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/jhsrobo', 'OLDPWD': '/home/jhsrobo/corews/scripts', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1390', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_colcon_cd_root': '/opt/ros/humble/', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jhsrobo/corews/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'jhsrobo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'jhsrobo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/JHSRobo:@/tmp/.ICE-unix/1137,unix/JHSRobo:/tmp/.ICE-unix/1137', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/d968be64_3640_4467_b927_79d5574714ba', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.0WIE71', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.1474', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '1', 'AMENT_PREFIX_PATH': '/home/jhsrobo/corews/install/motion_control:/home/jhsrobo/corews/install/core:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/jhsrobo/corews/build/motion_control', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/jhsrobo/corews/build/motion_control/prefix_override:/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/jhsrobo/corews/install/core'}, 'shell': False}
+[0.926595] (-) TimerEvent: {}
+[1.036909] (-) TimerEvent: {}
+[1.080438] (motion_control) StdoutLine: {'line': b'running egg_info\n'}
+[1.081605] (motion_control) StdoutLine: {'line': b'writing ../../build/motion_control/motion_control.egg-info/PKG-INFO\n'}
+[1.082271] (motion_control) StdoutLine: {'line': b'writing dependency_links to ../../build/motion_control/motion_control.egg-info/dependency_links.txt\n'}
+[1.082767] (motion_control) StdoutLine: {'line': b'writing entry points to ../../build/motion_control/motion_control.egg-info/entry_points.txt\n'}
+[1.083338] (motion_control) StdoutLine: {'line': b'writing requirements to ../../build/motion_control/motion_control.egg-info/requires.txt\n'}
+[1.083754] (motion_control) StdoutLine: {'line': b'writing top-level names to ../../build/motion_control/motion_control.egg-info/top_level.txt\n'}
+[1.085450] (motion_control) StdoutLine: {'line': b"reading manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'\n"}
+[1.085806] (motion_control) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[1.086594] (motion_control) StdoutLine: {'line': b"writing manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'\n"}
+[1.086988] (motion_control) StdoutLine: {'line': b'running build\n'}
+[1.087338] (motion_control) StdoutLine: {'line': b'running build_py\n'}
+[1.087751] (motion_control) StdoutLine: {'line': b'copying motion_control/motion_control.py -> /home/jhsrobo/corews/build/motion_control/build/lib/motion_control\n'}
+[1.088361] (motion_control) StdoutLine: {'line': b'running install\n'}
+[1.088798] (motion_control) StdoutLine: {'line': b'running install_lib\n'}
+[1.089463] (motion_control) StdoutLine: {'line': b'copying /home/jhsrobo/corews/build/motion_control/build/lib/motion_control/motion_control.py -> /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control\n'}
+[1.090435] (motion_control) StdoutLine: {'line': b'byte-compiling /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control/motion_control.py to motion_control.cpython-310.pyc\n'}
+[1.091557] (motion_control) StdoutLine: {'line': b'running install_data\n'}
+[1.092149] (motion_control) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.093461] (motion_control) StdoutLine: {'line': b"removing '/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.094877] (motion_control) StdoutLine: {'line': b'Copying ../../build/motion_control/motion_control.egg-info to /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control-0.0.0-py3.10.egg-info\n'}
+[1.098355] (motion_control) StdoutLine: {'line': b'running install_scripts\n'}
+[1.110338] (motion_control) StdoutLine: {'line': b'Installing motion_control script to /home/jhsrobo/corews/install/motion_control/lib/motion_control\n'}
+[1.110932] (motion_control) StdoutLine: {'line': b"writing list of installed files to '/home/jhsrobo/corews/build/motion_control/install.log'\n"}
+[1.128586] (motion_control) CommandEnded: {'returncode': 0}
+[1.133794] (motion_control) JobEnded: {'identifier': 'motion_control', 'rc': 0}
+[1.134341] (-) EventReactorShutdown: {}

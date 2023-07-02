@@ -1,0 +1,38 @@
+[0.387s] Invoking command in '/home/jhsrobo/corews/src/motion_control': PYTHONPATH=/home/jhsrobo/corews/build/motion_control/prefix_override:/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/motion_control build --build-base /home/jhsrobo/corews/build/motion_control/build install --record /home/jhsrobo/corews/build/motion_control/install.log --single-version-externally-managed
+[0.539s] running egg_info
+[0.539s] creating ../../build/motion_control/motion_control.egg-info
+[0.539s] writing ../../build/motion_control/motion_control.egg-info/PKG-INFO
+[0.539s] writing dependency_links to ../../build/motion_control/motion_control.egg-info/dependency_links.txt
+[0.540s] writing entry points to ../../build/motion_control/motion_control.egg-info/entry_points.txt
+[0.540s] writing requirements to ../../build/motion_control/motion_control.egg-info/requires.txt
+[0.540s] writing top-level names to ../../build/motion_control/motion_control.egg-info/top_level.txt
+[0.540s] writing manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'
+[0.541s] reading manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'
+[0.541s] adding license file 'LICENSE'
+[0.542s] writing manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'
+[0.542s] running build
+[0.542s] running build_py
+[0.542s] creating /home/jhsrobo/corews/build/motion_control/build
+[0.542s] creating /home/jhsrobo/corews/build/motion_control/build/lib
+[0.543s] creating /home/jhsrobo/corews/build/motion_control/build/lib/motion_control
+[0.543s] copying motion_control/motion_control.py -> /home/jhsrobo/corews/build/motion_control/build/lib/motion_control
+[0.543s] copying motion_control/__init__.py -> /home/jhsrobo/corews/build/motion_control/build/lib/motion_control
+[0.543s] running install
+[0.544s] running install_lib
+[0.544s] creating /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control
+[0.544s] copying /home/jhsrobo/corews/build/motion_control/build/lib/motion_control/motion_control.py -> /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control
+[0.544s] copying /home/jhsrobo/corews/build/motion_control/build/lib/motion_control/__init__.py -> /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control
+[0.545s] byte-compiling /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control/motion_control.py to motion_control.cpython-310.pyc
+[0.545s] byte-compiling /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control/__init__.py to __init__.cpython-310.pyc
+[0.545s] running install_data
+[0.546s] creating /home/jhsrobo/corews/install/motion_control/share/ament_index
+[0.546s] creating /home/jhsrobo/corews/install/motion_control/share/ament_index/resource_index
+[0.546s] creating /home/jhsrobo/corews/install/motion_control/share/ament_index/resource_index/packages
+[0.546s] copying resource/motion_control -> /home/jhsrobo/corews/install/motion_control/share/ament_index/resource_index/packages
+[0.546s] copying package.xml -> /home/jhsrobo/corews/install/motion_control/share/motion_control
+[0.546s] running install_egg_info
+[0.547s] Copying ../../build/motion_control/motion_control.egg-info to /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control-0.0.0-py3.10.egg-info
+[0.548s] running install_scripts
+[0.560s] Installing motion_control script to /home/jhsrobo/corews/install/motion_control/lib/motion_control
+[0.560s] writing list of installed files to '/home/jhsrobo/corews/build/motion_control/install.log'
+[0.577s] Invoked command in '/home/jhsrobo/corews/src/motion_control' returned '0': PYTHONPATH=/home/jhsrobo/corews/build/motion_control/prefix_override:/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/motion_control build --build-base /home/jhsrobo/corews/build/motion_control/build install --record /home/jhsrobo/corews/build/motion_control/install.log --single-version-externally-managed

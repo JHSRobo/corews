@@ -1,0 +1,25 @@
+[0.487s] Invoking command in '/home/jhsrobo/corews/src/motion_control': PYTHONPATH=/home/jhsrobo/corews/build/motion_control/prefix_override:/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/motion_control build --build-base /home/jhsrobo/corews/build/motion_control/build install --record /home/jhsrobo/corews/build/motion_control/install.log --single-version-externally-managed
+[0.640s] running egg_info
+[0.642s] writing ../../build/motion_control/motion_control.egg-info/PKG-INFO
+[0.642s] writing dependency_links to ../../build/motion_control/motion_control.egg-info/dependency_links.txt
+[0.642s] writing entry points to ../../build/motion_control/motion_control.egg-info/entry_points.txt
+[0.642s] writing requirements to ../../build/motion_control/motion_control.egg-info/requires.txt
+[0.642s] writing top-level names to ../../build/motion_control/motion_control.egg-info/top_level.txt
+[0.643s] reading manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'
+[0.643s] adding license file 'LICENSE'
+[0.644s] writing manifest file '../../build/motion_control/motion_control.egg-info/SOURCES.txt'
+[0.644s] running build
+[0.644s] running build_py
+[0.644s] copying motion_control/motion_control.py -> /home/jhsrobo/corews/build/motion_control/build/lib/motion_control
+[0.645s] running install
+[0.645s] running install_lib
+[0.646s] copying /home/jhsrobo/corews/build/motion_control/build/lib/motion_control/motion_control.py -> /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control
+[0.647s] byte-compiling /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control/motion_control.py to motion_control.cpython-310.pyc
+[0.648s] running install_data
+[0.648s] running install_egg_info
+[0.649s] removing '/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control-0.0.0-py3.10.egg-info' (and everything under it)
+[0.651s] Copying ../../build/motion_control/motion_control.egg-info to /home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages/motion_control-0.0.0-py3.10.egg-info
+[0.654s] running install_scripts
+[0.666s] Installing motion_control script to /home/jhsrobo/corews/install/motion_control/lib/motion_control
+[0.667s] writing list of installed files to '/home/jhsrobo/corews/build/motion_control/install.log'
+[0.689s] Invoked command in '/home/jhsrobo/corews/src/motion_control' returned '0': PYTHONPATH=/home/jhsrobo/corews/build/motion_control/prefix_override:/home/jhsrobo/corews/install/motion_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/motion_control build --build-base /home/jhsrobo/corews/build/motion_control/build install --record /home/jhsrobo/corews/build/motion_control/install.log --single-version-externally-managed
