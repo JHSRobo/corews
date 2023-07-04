@@ -393,6 +393,32 @@ core__rosidl_typesupport_c__pyext/fast:
 .PHONY : core__rosidl_typesupport_c__pyext/fast
 
 #=============================================================================
+# Target rules for targets named ament_cmake_python_copy_core_lib
+
+# Build rule for target.
+ament_cmake_python_copy_core_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_core_lib
+.PHONY : ament_cmake_python_copy_core_lib
+
+# fast build rule for target.
+ament_cmake_python_copy_core_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_core_lib.dir/build.make CMakeFiles/ament_cmake_python_copy_core_lib.dir/build
+.PHONY : ament_cmake_python_copy_core_lib/fast
+
+#=============================================================================
+# Target rules for targets named ament_cmake_python_build_core_lib_egg
+
+# Build rule for target.
+ament_cmake_python_build_core_lib_egg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_build_core_lib_egg
+.PHONY : ament_cmake_python_build_core_lib_egg
+
+# fast build rule for target.
+ament_cmake_python_build_core_lib_egg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_core_lib_egg.dir/build.make CMakeFiles/ament_cmake_python_build_core_lib_egg.dir/build
+.PHONY : ament_cmake_python_build_core_lib_egg/fast
+
+#=============================================================================
 # Target rules for targets named core__py
 
 # Build rule for target.
@@ -683,7 +709,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ament_cmake_python_build_core_egg"
+	@echo "... ament_cmake_python_build_core_lib_egg"
 	@echo "... ament_cmake_python_copy_core"
+	@echo "... ament_cmake_python_copy_core_lib"
 	@echo "... core"
 	@echo "... core__cpp"
 	@echo "... core__py"

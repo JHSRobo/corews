@@ -15,6 +15,8 @@
 /home/jhsrobo/corews/build/core/CMakeFiles/core__rosidl_typesupport_fastrtps_c__pyext.dir
 /home/jhsrobo/corews/build/core/CMakeFiles/core__rosidl_typesupport_introspection_c__pyext.dir
 /home/jhsrobo/corews/build/core/CMakeFiles/core__rosidl_typesupport_c__pyext.dir
+/home/jhsrobo/corews/build/core/CMakeFiles/ament_cmake_python_copy_core_lib.dir
+/home/jhsrobo/corews/build/core/CMakeFiles/ament_cmake_python_build_core_lib_egg.dir
 /home/jhsrobo/corews/build/core/CMakeFiles/test.dir
 /home/jhsrobo/corews/build/core/CMakeFiles/edit_cache.dir
 /home/jhsrobo/corews/build/core/CMakeFiles/rebuild_cache.dir

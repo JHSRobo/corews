@@ -10,5 +10,6 @@ setup.py
 ../../build/motion_control/motion_control.egg-info/top_level.txt
 ../../build/motion_control/motion_control.egg-info/zip-safe
 motion_control/__init__.py
-motion_control/motion_control.py
+motion_control/transforms.py
+motion_control/vector_conversion.py
 resource/motion_control

@@ -54,6 +54,13 @@
 /home/jhsrobo/corews/install/core/lib/libcore__rosidl_generator_py.so
 /home/jhsrobo/corews/install/core/share/core/msg/Float32Arr.idl
 /home/jhsrobo/corews/install/core/share/core/msg/Float32Arr.msg
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib-0.0.0-py3.10.egg-info/top_level.txt
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib-0.0.0-py3.10.egg-info/PKG-INFO
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib-0.0.0-py3.10.egg-info/SOURCES.txt
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib-0.0.0-py3.10.egg-info/dependency_links.txt
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib/quaternion_math.py
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib/__init__.py
+/home/jhsrobo/corews/install/core/local/lib/python3.10/dist-packages/core_lib/motion_simulator.py
 /home/jhsrobo/corews/install/core/share/ament_index/resource_index/package_run_dependencies/core
 /home/jhsrobo/corews/install/core/share/ament_index/resource_index/parent_prefix_path/core
 /home/jhsrobo/corews/install/core/share/core/environment/ament_prefix_path.sh

@@ -49,13 +49,6 @@ def generate_launch_description():
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
             name='joint_state_publisher'),
-
-        # Package for some basic ROV States
-        Node(
-            package='rov_sim',
-            executable='state_publisher',
-            name='state_publisher',
-            output='screen'),
         
         # Package for simulating GPIO Toggle
         Node(
