@@ -24,6 +24,12 @@ launch:
     exec: "motion_control"
     name: "motion_control"
 
+# Node for rqt_reconfigure GUI
+- node:
+    pkg: "rqt_reconfigure"
+    exec: "rqt_reconfigure"
+    name: "rqt_reconfigure"
+
 # Node for generating vector from controller input
 # Learn more here: https://index.ros.org/p/teleop_twist_joy/github-ros2-teleop_twist_joy/
 - node:
