@@ -230,7 +230,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 32; 53; 93
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
