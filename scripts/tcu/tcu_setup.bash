@@ -12,7 +12,6 @@ pip install setuptools==58.2.0
 
 # Add helpful stuff to ~/.bashrc
 echo "source /opt/ros/humble/setup.bash" >> /home/jhsrobo/.bashrc
-echo "source /home/jhsrobo/corews/install/setup.bash" >> /home/jhsrobo/.bashrc
 echo "alias topside=\"ros2 launch core topside.yaml\"" >> /home/jhsrobo/.bashrc
 
 # Add Network Shortcuts
