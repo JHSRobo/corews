@@ -20,13 +20,18 @@ echo "192.168.1.100 master" >> /etc/hosts
 echo "192.168.1.110 opside" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 
-# Add the ROS2 GPG Key and add to sources
+# Install ROS
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-apt update -y
-
-# Install ROS
+apt update
 apt install ros-humble-desktop ros-dev-tools -y
-
 rosdep init
 sudo -u jhsrobo rosdep update
+
+# Install GitHub cli tools
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+apt update
+apt install gh -y
