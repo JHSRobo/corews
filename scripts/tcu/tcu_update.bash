@@ -14,6 +14,10 @@ cd /home/jhsrobo/corews/src
 # Remove old packages
 rm -rf motion_control rov_sim
 
+# Clone new packages
+git clone https://github.com/JHSRobo/motion_control
+git clone https://github.com/JHSRobo/rov_sim
+
 # Update dependencies
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src -r -y
 

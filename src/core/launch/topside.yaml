@@ -24,13 +24,6 @@ launch:
     exec: "vector_conversion"
     name: "vector_conversion"
 
-# Node for turning vectors into transforms and broadcasting
-- node:
-    pkg: "motion_control"
-    exec: "transforms"
-    name: "transforms"
-
-
 # Node for rqt_reconfigure GUI
 - node:
     pkg: "rqt_reconfigure"

@@ -7,7 +7,7 @@ if [[ "$(id -u)" != 0 ]]
 fi
 
 # Install helpful packages
-apt install gcc make perl curl pip -y
+apt install gcc make perl curl pip wget gnupg -y
 pip install setuptools==58.2.0
 
 # Add helpful stuff to ~/.bashrc
@@ -35,3 +35,9 @@ sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 apt update
 apt install gh -y
+
+# Install Gazebo Simulation
+wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+apt update
+apt install ignition-fortress -y

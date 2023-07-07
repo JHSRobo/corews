@@ -62,7 +62,8 @@ def generate_launch_description():
             executable='depth_sensor',
             name='depth_sensor'),
 
-        # Launch the Robot Visualizer GUI
+        # Uncomment to launch the Robot Visualizer GUI (RVIZ)
+        """
         Node(
             package="rviz2",
             executable="rviz2",
@@ -70,4 +71,5 @@ def generate_launch_description():
             output='screen',
             arguments=['-d', LaunchConfiguration('rvizconfig')],       
         ),
+        """
     ])
