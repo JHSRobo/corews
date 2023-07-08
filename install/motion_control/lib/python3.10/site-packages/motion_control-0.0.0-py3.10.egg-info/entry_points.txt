@@ -1,4 +1,3 @@
 [console_scripts]
-transforms = motion_control.transforms:main
 vector_conversion = motion_control.vector_conversion:main
 

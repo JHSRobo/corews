@@ -2,6 +2,7 @@
 /home/jhsrobo/corews/install/core/share/core//launch/bottomside.yaml
 /home/jhsrobo/corews/install/core/share/core//launch/opside.yaml
 /home/jhsrobo/corews/install/core/share/core//launch/sim_bottomside.py
+/home/jhsrobo/corews/install/core/share/core//launch/gazebo.bash
 /home/jhsrobo/corews/install/core/share/ament_index/resource_index/rosidl_interfaces/core
 /home/jhsrobo/corews/install/core/include/core/core/msg/float32_arr.h
 /home/jhsrobo/corews/install/core/include/core/core/msg/detail/float32_arr__type_support.h

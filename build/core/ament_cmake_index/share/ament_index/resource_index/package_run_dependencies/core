@@ -1,1 +1,1 @@
-action_msgs;std_msgs;sensor_msgs;joy;teleop_twist_joy;rosidl_default_runtime;ros2launch;ament_lint_auto;ament_lint_common
+action_msgs;std_msgs;sensor_msgs;joy;rosidl_default_runtime;ros2launch;ament_lint_auto;ament_lint_common

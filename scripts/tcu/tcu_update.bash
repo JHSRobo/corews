@@ -19,7 +19,7 @@ git clone https://github.com/JHSRobo/motion_control
 git clone https://github.com/JHSRobo/rov_sim
 
 # Update dependencies
-sudo -u jhsrobo rosdep install --from-paths src --ignore-src -r -y
+sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
 
 # Compile and source
 cd /home/jhsrobo/corews
