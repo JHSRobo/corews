@@ -47,161 +47,16 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
-        Back_Left_Post:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Back_Right_Post:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        HGripper_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        HGripper_Finger_Mobile:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        HGripper_Finger_Static:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        HGripper_Post:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Left_Post:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        Lower_Back_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Lower_Front_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Lower_Left_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Lower_Right_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MEH:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        MEH_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        PSE:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Right_Post:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        SB_Left:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        SB_Right:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Thruster_Back_Left:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Thruster_Back_Right:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Thruster_Front_Left:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Thruster_Front_Right:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Thruster_Vert_Left:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Thruster_Vert_Right:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Upper_Back_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Upper_Left_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Upper_Right_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        VGripper_Crossbar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        VGripper_Finger_Mobile:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        VGripper_Finger_Static:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        VGripper_Post:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        inertial_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -230,7 +85,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 32; 53; 93
-    Fixed Frame: odom
+    Fixed Frame: inertial_link
     Frame Rate: 30
   Name: root
   Tools:

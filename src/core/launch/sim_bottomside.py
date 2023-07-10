@@ -95,14 +95,13 @@ def generate_launch_description():
                 shell=True ),
 
         # Uncomment to launch the Robot Visualizer GUI (RVIZ)
-        #"""
-        #Node(
-        #    package="rviz2",
-        #    executable="rviz2",
-        #    name="rviz2",
-        #    output='screen',
-        #    arguments=['-d', LaunchConfiguration('rvizconfig')],       
-        #),
-        #"""
+
+        Node(
+            package="rviz2",
+            executable="rviz2",
+            name="rviz2",
+            output='screen',
+            arguments=['-d', LaunchConfiguration('rvizconfig')],       
+        ),
 
     ])

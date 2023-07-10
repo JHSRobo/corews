@@ -3,6 +3,7 @@ launch:
 # Arguments for the various nodes.
 # These can be set from cmd line if necessary
 
+# Set Joy Node to look for Xbox Controller
 - arg:
     name: "joy_config"
     default: "xbox"

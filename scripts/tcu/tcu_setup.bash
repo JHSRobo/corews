@@ -12,6 +12,7 @@ pip install setuptools==58.2.0
 
 # Add helpful stuff to ~/.bashrc
 echo "source /opt/ros/humble/setup.bash" >> /home/jhsrobo/.bashrc
+echo "source /home/jhsrobo/corews/install/setup.bash" >> /home/jhsrobo/.bashrc
 echo "alias topside=\"ros2 launch core topside.yaml\"" >> /home/jhsrobo/.bashrc
 
 # Add Network Shortcuts
@@ -40,3 +41,6 @@ wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-o
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
 apt update
 apt install ignition-fortress -y
+
+# Call the update script
+sudo bash home/jhsrobo/corews/scripts/tcu/tcu_update.bash
