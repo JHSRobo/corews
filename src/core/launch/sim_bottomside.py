@@ -54,13 +54,6 @@ def generate_launch_description():
             output='screen',
             parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             arguments=[urdf]),
-
-        # Launches a GUI that lets you control joint states
-        # (Movable Parts)
-        Node(
-            package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui',
-            name='joint_state_publisher'),
         
         # Package for simulating GPIO Toggle
         Node(
@@ -68,17 +61,11 @@ def generate_launch_description():
             executable='gpio_control',
             name='gpio_control'),
 
-        # Package for simulating depth sensor
-        Node(
-            package='rov_sim',
-            executable='depth_sensor',
-            name='depth_sensor'),
-
         # Run Ignition Gazebo
-        ExecuteProcess(
-            cmd=['ign gazebo', LaunchConfiguration('sdf_path')],
-            output='screen',
-            shell=True ),
+        #ExecuteProcess(
+        #    cmd=['ign gazebo', LaunchConfiguration('sdf_path')],
+        #    output='screen',
+        #    shell=True ),
 
         # Launch ROS Ignition Gazebo Bridge
         Node(
