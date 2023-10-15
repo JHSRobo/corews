@@ -15,7 +15,7 @@ rm -rf thruster_interface gpio_control sensor_interface
 
 # Clone new packages
 git clone https://github.com/JHSRobo/thruster_interface
-git clone https://github.com/JHSRobo/gpio_control
+git clone https://github.com/JHSRobo/gpio_interface
 git clone https://github.com/JHSRobo/sensor_interface
 
 # Update dependencies

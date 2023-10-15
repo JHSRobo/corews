@@ -62,10 +62,10 @@ def generate_launch_description():
             name='gpio_control'),
 
         # Run Ignition Gazebo
-        #ExecuteProcess(
-        #    cmd=['ign gazebo', LaunchConfiguration('sdf_path')],
-        #    output='screen',
-        #    shell=True ),
+        ExecuteProcess(
+            cmd=['ign gazebo', LaunchConfiguration('sdf_path')],
+            output='screen',
+            shell=True ),
 
         # Launch ROS Ignition Gazebo Bridge
         Node(

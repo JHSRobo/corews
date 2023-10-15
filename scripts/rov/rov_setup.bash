@@ -6,8 +6,6 @@ if [[ "$(id -u)" != 0 ]]
   exit
 fi
 
-adduser jhsrobo gpio
-
 # Edit Ubuntu Files
 rm -rf /home/jhsrobo/.bashrc
 rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
@@ -31,3 +29,6 @@ apt update
 apt install ros-humble-ros-base ros-dev-tools -y
 rosdep init
 sudo -u jhsrobo rosdep update
+
+# Call the update script
+sudo bash /home/jhsrobo/corews/scripts/rov/rov_update.bash
