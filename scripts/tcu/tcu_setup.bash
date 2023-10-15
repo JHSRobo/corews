@@ -43,4 +43,4 @@ apt update
 apt install ignition-fortress -y
 
 # Call the update script
-sudo bash home/jhsrobo/corews/scripts/tcu/tcu_update.bash
+sudo bash /home/jhsrobo/corews/scripts/tcu/tcu_update.bash
