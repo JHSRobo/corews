@@ -8,10 +8,16 @@ fi
 
 # Update the corews
 git pull --hard
+
+# Remove previously compiled code
+rm -rf /home/jhsrobo/corews/build
+rm -rf /home/jhsrobo/corews/install
+rm -rf /home/jhsrobo/corews/log
+
 cd /home/jhsrobo/corews/src
 
 # Remove old packages
-rm -rf thruster_interface gpio_control sensor_interface
+rm -rf thruster_interface gpio_interface sensor_interface
 
 # Clone new packages
 git clone https://github.com/JHSRobo/thruster_interface
