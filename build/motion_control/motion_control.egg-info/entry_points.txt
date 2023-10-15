@@ -1,3 +1,0 @@
-[console_scripts]
-vector_conversion = motion_control.vector_conversion:main
-
