@@ -29,7 +29,7 @@ sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_D
 
 # Compile and source
 cd /home/jhsrobo/corews
-colcon build
+sudo -u jhsrobo colcon build
 source install/setup.bash
 
 # Give jhsrobo ownership of the workspace

@@ -26,10 +26,9 @@ echo "192.168.1.111 bottomside" >> /etc/hosts
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 apt update
-apt install ros-humble-ros-base ros-dev-tools python3-pip -y
+apt install ros-humble-ros-base ros-dev-tools python3-pip python-dev-is-python3 python3-rpi.gpio picap -y
 pip install setuptools==58.2.0
 rosdep init
-sudo -u jhsrobo rosdep update
 
 # Call the update script
 sudo bash /home/jhsrobo/corews/scripts/rov/rov_update.bash
