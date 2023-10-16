@@ -28,10 +28,7 @@ git clone https://github.com/JHSRobo/sensor_interface
 sudo -u jhsrobo rosdep update
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
 
-# Compile and source
-cd /home/jhsrobo/corews
-sudo -u jhsrobo colcon build
-source install/setup.bash
-
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
+
+echo "Remember to source ~/.bashrc and compile!"
