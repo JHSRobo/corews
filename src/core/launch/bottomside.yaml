@@ -8,3 +8,13 @@ launch:
     pkg: "gpio_interface"
     exec: "gpio_control"
     name: "gpio_interface"
+
+- node:
+    pkg: "sensor_interface"
+    exec: "depth_sensor"
+    name: "depth_sensor"
+
+- node:
+    pkg: "sensor_interface"
+    exec: "imu_sensor"
+    name: "imu_sensor"
