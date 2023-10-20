@@ -3,12 +3,13 @@ launch:
 # Arguments for the various nodes.
 # These can be set from cmd line if necessary
 
-# Node for gpio_control
+# Node for gpio control
 - node:
     pkg: "gpio_interface"
     exec: "gpio_control"
     name: "gpio_interface"
 
+# Nodes for sensors
 - node:
     pkg: "sensor_interface"
     exec: "depth_sensor"
@@ -18,3 +19,13 @@ launch:
     pkg: "sensor_interface"
     exec: "imu_sensor"
     name: "imu_sensor"
+
+- node:
+    pkg: "sensor_interface"
+    exec: "temp_sensor"
+    name: "temp_sensor"
+
+- node:
+    pkg: "sensor_interface"
+    exec: "leak_sensor"
+    name: "leak_sensor"

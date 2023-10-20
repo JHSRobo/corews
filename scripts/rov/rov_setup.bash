@@ -24,9 +24,15 @@ echo "192.168.1.111 bottomside" >> /etc/hosts
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 apt update
-apt install ros-humble-ros-base ros-dev-tools python3-pip python-dev-is-python3 python3-rpi.gpio -y
+apt install ros-humble-ros-base ros-dev-tools python3-pip python-dev-is-python3  -y
 pip install setuptools==58.2.0
 rosdep init
+
+# Install Packages that are NOT RECOGNIZED BY ROSDEP
+# You can find lists of all rosdep recognized packages here:
+# https://github.com/ros/rosdistro/tree/master/rosdep
+# If your package isn't in base.yaml or python.yaml, add it below.
+pip install adafruit-circuitpython-bme280
 
 # Call the update script
 bash /home/jhsrobo/corews/scripts/rov/rov_update.bash

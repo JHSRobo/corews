@@ -24,6 +24,8 @@
   <depend>joy</depend>
   <depend>python3-smbus</depend>
   <depend>python-smbus</depend>
+  <depend>RPi.GPIO</depend>
+  <depend>python-rpi.gpio</depend>
   
   <export>
     <build_type>ament_cmake</build_type>
