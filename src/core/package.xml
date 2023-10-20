@@ -26,6 +26,7 @@
   <depend>python-smbus</depend>
   <depend>RPi.GPIO</depend>
   <depend>python-rpi.gpio</depend>
+  <depend>python-opencv</depend>
   
   <export>
     <build_type>ament_cmake</build_type>

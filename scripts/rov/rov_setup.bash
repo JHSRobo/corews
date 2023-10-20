@@ -6,10 +6,6 @@ if [[ "$(id -u)" != 0 ]]
   exit
 fi
 
-# Edit Ubuntu Files
-rm -rf /home/jhsrobo/ROVMIND/tcu_repo_clone.sh
-rm -rf /home/jhsrobo/ROVMIND/tcu_bringup.sh
-
 # Add helpful stuff to ~/.bashrc
 echo "source /opt/ros/humble/setup.bash" >> /home/jhsrobo/.bashrc
 echo "source /home/jhsrobo/corews/install/setup.bash" >> /home/jhsrobo/.bashrc
@@ -32,7 +28,7 @@ rosdep init
 # You can find lists of all rosdep recognized packages here:
 # https://github.com/ros/rosdistro/tree/master/rosdep
 # If your package isn't in base.yaml or python.yaml, add it below.
-pip install adafruit-circuitpython-bme280
+pip install adafruit-circuitpython-bme280 ninja meson libcamera-dev libcamera-tools
 
 # Call the update script
 bash /home/jhsrobo/corews/scripts/rov/rov_update.bash
