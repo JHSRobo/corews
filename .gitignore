@@ -4,7 +4,6 @@ src/pilot_gui
 src/gpio_interface
 src/thruster_interface
 src/sensor_interface
-src/meh_camera
 build
 log
 install
