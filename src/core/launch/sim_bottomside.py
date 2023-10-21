@@ -54,12 +54,6 @@ def generate_launch_description():
             output='screen',
             parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             arguments=[urdf]),
-        
-        # Package for simulating GPIO Toggle
-        Node(
-            package='rov_sim',
-            executable='gpio_control',
-            name='gpio_control'),
 
         # Run Ignition Gazebo
         ExecuteProcess(
