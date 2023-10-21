@@ -24,6 +24,8 @@
   <depend>joy</depend>
   <depend>python3-opencv</depend>
   <depend>python3-numpy</depend>
+  <depend>smbus2</depend>
+  <depend>python3-smbus2</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
