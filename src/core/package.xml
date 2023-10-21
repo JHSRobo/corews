@@ -22,7 +22,9 @@
   <member_of_group>rosidl_interface_packages</member_of_group>
 
   <depend>joy</depend>
-  
+  <depend>python3-opencv</depend>
+  <depend>python3-numpy</depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>
