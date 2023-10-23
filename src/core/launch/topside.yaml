@@ -30,3 +30,15 @@ launch:
     pkg: "rqt_reconfigure"
     exec: "rqt_reconfigure"
     name: "rqt_reconfigure"
+
+# Node for finding cameras
+- node:
+    pkg: "pilot_gui"
+    exec: "find_cameras"
+    name: "find_cameras"
+
+# Node for handling camera switching
+- node:
+    pkg: "pilot_gui"
+    exec: "switch_cameras"
+    name: "switch_cameras"
