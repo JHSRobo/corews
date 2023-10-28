@@ -29,3 +29,8 @@ launch:
     pkg: "sensor_interface"
     exec: "leak_sensor"
     name: "leak_sensor"
+
+- node:
+    pkg: "thruster_interface"
+    exec: "thrusters"
+    name: "thrusters"
