@@ -42,3 +42,9 @@ launch:
     pkg: "pilot_gui"
     exec: "switch_cameras"
     name: "switch_cameras"
+
+# Node for displaying cameras
+- node:
+    pkg: "pilot_gui"
+    exec: "view_cameras"
+    name: "view_cameras"
