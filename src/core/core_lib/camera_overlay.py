@@ -1,60 +1,74 @@
 import cv2
-import numpy as np
 
-class Overlay():
-    def __init__(self):
-        self.lower_red_first = np.array([0,70,10])
-        self.upper_red_first = np.array([10,255,255])
-        self.lower_red_second = np.array([170,70,10])
-        self.upper_red_second = np.array([180,255,255])
-        self.lower_white = np.array([0,3,240])
-        self.upper_white = np.array([255,5,255])
-
-    def depth_bar(self, frame, depthLevel):
-        # Preparing the bar
-        cv2.line(frame, (1240, 128), (1240, 640), (48, 18, 196), 5)
-        cv2.line(frame, (1240, 128), (1190, 128), (48, 18, 196), 5)
-        cv2.line(frame, (1240, 640), (1190, 640), (48, 18, 196), 5)
-
-        # Intervals (32 pixels)
-        for i in range(16):
-            if i % 2 == 0:
-                cv2.line(frame, (1240, 608 - (i * 32)), (1215, 608 - (i * 32)), (48, 18, 196), 5)
-            else:
-                cv2.line(frame, (1240, 608 - (i * 32)), (1190, 608 - (i * 32)), (48, 18, 196), 5)
-
-        # Draw target depth
-        if self.dh_enable:
-            cv2.line(frame, (1190, int(self.target_depth * 32) + 128), (1240, int(self.target_depth * 32) + 128), (255,0,0), 5)
-            cv2.putText(frame, "Target", (1085, int(self.target_depth * 32) + 135), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+class HUD():
+    def __init__(self, resolution = (1280, 720)):
+        
+        # Appearance Settings
+        self.font = cv2.FONT_HERSHEY_SIMPLEX
+        self.color = (48, 18, 196) # Jesuit Red, but in BGR instead of RGB
+        self.thickness = 1
+        self.display_width = resolution[0]
+        self.display_height = resolution[1]
+        self.line_type = cv2.LINE_AA
+        self.left_align = int(self.display_width / 40)
+        self.vertical_increment = int(self.display_height / 20)
 
 
-        # Draw pointer
-        pt1 = (1240, (depthLevel * 32) + 128)
-        pt2 = (1190, (depthLevel * 32) + 153)
-        pt3 = (1190, (depthLevel * 32) + 103)
+    # Overlays the current camera's index and nickname
+    def add_camera_details(self, frame, index, nickname):
+        text = "{}: {}".format(index, nickname)
+        font_size = 0.8
+        position = (self.left_align, self.vertical_increment)
 
-        pointer = np.array([pt1, pt2, pt3])
-        cv2.drawContours(frame, [pointer.astype(int)], 0, (19,185,253), -1)
+        frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
+        return frame
+    
+    
+    # Overlays the current thruster status onto the frame
+    def add_thruster_status(self, frame, status_bool):
+        if status_bool: status_text = "Enabled"
+        else: status_text = "Disabled" 
+        text = "Thrusters: {}".format(status_text)
 
+        font_size = 0.6
+        position = (self.left_align, 2 * self.vertical_increment)
+
+        frame = self.add_text(frame, text, position, font_size)
         return frame
     
 
-    def throttle_bar(self, frame):
-      tempThrottle = abs(self.rov_throttle + 1000)
-      
-      cv2.line(frame, (40,128), (40, 640), (48, 18, 196), 5)
-      cv2.line(frame, (40,128), (90, 128), (48, 18, 196), 5)
-      cv2.line(frame, (40,640), (90, 640), (48, 18, 196), 5)
-      cv2.line(frame, (40,384), (90, 384), (48, 18, 196), 5)
-      
-      pt1 = (40, int(tempThrottle * 0.256) + 128)
-      pt2 = (90, int(tempThrottle * 0.256) + 153)
-      pt3 = (90, int(tempThrottle * 0.256) + 103)
-      pointer = np.array([pt1, pt2, pt3])
-      
-      if not self.dh_enable:
-        cv2.drawContours(frame, [pointer.astype(int)], 0, (19,185,253), -1)
-      else:
-        cv2.drawContours(frame, [pointer.astype(int)], 0, (255,0,0), -1)
-      return frame
+    # Accepts a dictionary of sensitivity values and overlays them onto the frame
+    def add_sensitivity(self, frame, sensitivities):
+        
+        # Add the header
+        font_size = 0.6
+        position = (self.left_align, 3 * self.vertical_increment)
+        frame = self.add_text(frame, "Sensitivity:", position, font_size)
+
+        # Add the individual sensitivies:
+        font_size = 0.5
+        counter = 3.66
+        for key in sensitivities:
+            position = (self.left_align + 20, int(counter * self.vertical_increment))
+            text = "{}: {}".format(key, sensitivities[key])
+            frame = self.add_text(frame, text, position, font_size)
+            counter += 0.66
+        
+        return frame
+
+
+    def leak_notification(self, frame):
+        text = "LEAK DETECTED"
+        font_size = 1
+        
+        # Find how large the text will be so we know how to center it
+        textSize = cv2.getTextSize(text, self.font, font_size, self.thickness)[0]
+        position = (int(self.display_width / 2 - textSize[0] / 2), int(self.display_height / 2))
+
+        frame = self.add_text(frame, text, position, font_size)
+        return frame
+    
+
+    def add_text(self, frame, text, position, font_size = 0.6):
+        frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
+        return frame
