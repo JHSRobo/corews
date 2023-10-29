@@ -4,7 +4,7 @@ class HUD():
     def __init__(self, resolution = (1280, 720)):
         
         # Appearance Settings
-        self.font = cv2.FONT_HERSHEY_SIMPLEX
+        self.font = cv2.FONT_HERSHEY_DUPLEX
         self.color = (48, 18, 196) # Jesuit Red, but in BGR instead of RGB
         self.thickness = 1
         self.display_width = resolution[0]
@@ -22,8 +22,8 @@ class HUD():
 
         frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
         return frame
-    
-    
+
+
     # Overlays the current thruster status onto the frame
     def add_thruster_status(self, frame, status_bool):
         if status_bool: status_text = "Enabled"
@@ -35,19 +35,31 @@ class HUD():
 
         frame = self.add_text(frame, text, position, font_size)
         return frame
-    
+
+
+    # Accepts a dictionary of sensitivity values and overlays them onto the frame
+    def add_gripper(self, frame, gripper):
+        
+        # Add the header
+        font_size = 0.6
+        position = (self.left_align, 3 * self.vertical_increment)
+        text = "Gripper: {}".format(gripper)
+        frame = self.add_text(frame, text, position, font_size)
+        
+        return frame
+
 
     # Accepts a dictionary of sensitivity values and overlays them onto the frame
     def add_sensitivity(self, frame, sensitivities):
         
         # Add the header
         font_size = 0.6
-        position = (self.left_align, 3 * self.vertical_increment)
+        position = (self.left_align, 4 * self.vertical_increment)
         frame = self.add_text(frame, "Sensitivity:", position, font_size)
 
         # Add the individual sensitivies:
         font_size = 0.5
-        counter = 3.66
+        counter = 4.66
         for key in sensitivities:
             position = (self.left_align + 20, int(counter * self.vertical_increment))
             text = "{}: {}".format(key, sensitivities[key])
