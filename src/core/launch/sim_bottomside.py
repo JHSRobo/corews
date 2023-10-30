@@ -11,7 +11,7 @@ def generate_launch_description():
 
     # Set up arguments from parameters file
     # Used for running rviz
-    rviz_config_path = '/home/jhsrobo/corews/src/core/rviz_config.rviz'
+    rviz_config_path = '/home/jhsrobo/corews/src/rov_sim/rviz_config.rviz'
 
     # Get the URDF File as a description to be used later.
     urdf_file_name = 'rov.urdf.xml'
@@ -20,7 +20,7 @@ def generate_launch_description():
         urdf_file_name)
     
     # Get the SDF File as a description to be used later.
-    sdf_file_name = 'pool.sdf.xml'
+    sdf_file_name = 'rov_sim.sdf'
     sdf = os.path.join(
         get_package_share_directory('rov_sim'),
         sdf_file_name)
