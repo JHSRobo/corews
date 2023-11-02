@@ -69,11 +69,16 @@ def generate_launch_description():
             arguments=['/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist'],
             output='screen'),
 
-        # Run important Gazebo Commands
+        # Launch Gazebo
         ExecuteProcess(
-            cmd=["bash /home/jhsrobo/corews/src/core/launch/gazebo.bash"],
-                output='screen',
+            cmd=["ign service -s /world/orca_sim/create --reqtype ignition.msgs.EntityFactory --reptype ignition.msgs.Boolean \
+                 --timeout 1000 --req 'sdf_filename: \"/home/jhsrobo/corews/src/rov_sim/urdf/rov.urdf.xml\", name: \"orca\"'"],
                 shell=True ),
+
+        # Spawn Robot URDF
+        #ExecuteProcess(
+        #    cmd=["bash /home/jhsrobo/corews/src/core/launch/gazebo.bash"],
+        #        shell=True ),
 
         # Uncomment to launch the Robot Visualizer GUI (RVIZ)
 
