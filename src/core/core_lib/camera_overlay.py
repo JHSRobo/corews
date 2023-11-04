@@ -54,12 +54,12 @@ class HUD():
         
         # Add the header
         font_size = 0.6
-        position = (self.left_align, 4 * self.vertical_increment)
+        position = (self.left_align, 5 * self.vertical_increment)
         frame = self.add_text(frame, "Sensitivity:", position, font_size)
 
         # Add the individual sensitivies:
         font_size = 0.5
-        counter = 4.66
+        counter = 5.66
         for key in sensitivities:
             position = (self.left_align + 20, int(counter * self.vertical_increment))
             text = "{}: {}".format(key, sensitivities[key])
@@ -67,6 +67,19 @@ class HUD():
             counter += 0.66
         
         return frame
+    
+
+    # Accepts a dictionary of sensitivity values and overlays them onto the frame
+    def add_publish_status(self, frame, publish_status):
+        
+        # Add the header
+        font_size = 0.6
+        position = (self.left_align, 4 * self.vertical_increment)
+        text = "Recording Feed: {}".format(publish_status)
+        frame = self.add_text(frame, text, position, font_size)
+        
+        return frame
+
 
 
     def leak_notification(self, frame):
