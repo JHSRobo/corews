@@ -30,4 +30,9 @@ sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_D
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
 
+# Install phidget packages
+curl -fsSL https://www.phidgets.com/downloads/setup_linux | bash
+apt install -y libphidget22
+pip install Phidget22
+
 echo "Remember to source ~/.bashrc and compile!"

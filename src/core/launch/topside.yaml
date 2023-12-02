@@ -48,3 +48,9 @@ launch:
     pkg: "pilot_gui"
     exec: "view_cameras"
     name: "view_cameras"
+
+# Node for controlling grippers
+- node:
+    pkg: "gripper_control"
+    exec: "gripper_control"
+    name: "gripper_control"
