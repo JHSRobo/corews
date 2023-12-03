@@ -22,8 +22,13 @@ launch:
 
 - node:
     pkg: "sensor_interface"
-    exec: "temp_sensor"
-    name: "temp_sensor"
+    exec: "inner_temp_sensor"
+    name: "inner_temp_sensor"
+
+- node:
+    pkg: "sensor_interface"
+    exec: "outer_temp_sensor"
+    name: "outer_temp_sensor"
 
 - node:
     pkg: "sensor_interface"

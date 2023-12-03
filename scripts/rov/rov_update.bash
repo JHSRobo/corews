@@ -32,7 +32,7 @@ sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_D
 # You can find lists of all rosdep recognized packages here:
 # https://github.com/ros/rosdistro/tree/master/rosdep
 # If your package isn't in base.yaml or python.yaml, add it below.
-pip install adafruit-circuitpython-bme280 adafruit-circuitpython-ahtx0 ninja meson libcamera-dev libcamera-tools
+pip install adafruit-circuitpython-bme280 adafruit-circuitpython-sht31d adafruit-circuitpython-ahtx0 ninja meson libcamera-dev libcamera-tools
 
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
