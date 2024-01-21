@@ -36,5 +36,7 @@ pip install adafruit-circuitpython-bme280 adafruit-circuitpython-sht31d adafruit
 
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
+cd ~
+colcon build --symlink-install
 
 echo "Remember to source ~/.bashrc and compile!"

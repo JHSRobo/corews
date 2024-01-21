@@ -21,7 +21,6 @@ rm -rf motion_control rov_sim pilot_gui gripper_control
 
 # Clone new packages
 git clone https://github.com/JHSRobo/motion_control
-git clone https://github.com/JHSRobo/rov_sim
 git clone https://github.com/JHSRobo/pilot_gui
 git clone https://github.com/JHSRobo/gripper_control
 
@@ -34,6 +33,6 @@ sudo chown jhsrobo: -R /home/jhsrobo/corews
 # Install phidget packages
 curl -fsSL https://www.phidgets.com/downloads/setup_linux | bash
 apt install -y libphidget22
-pip install Phidget22
 
-echo "Remember to source ~/.bashrc and compile!"
+cd ~
+colcon build --symlink-install
