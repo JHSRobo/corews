@@ -29,6 +29,7 @@ git clone https://github.com/JHSRobo/gripper_control
 
 # Update dependencies
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
+sudo -u jhsrobo pip install Phidget22
 
 # Install phidget packages
 curl -fsSL https://www.phidgets.com/downloads/setup_linux | bash
