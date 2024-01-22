@@ -19,6 +19,9 @@ cd /home/jhsrobo/corews/src
 # Remove old packages
 rm -rf motion_control rov_sim pilot_gui gripper_control
 
+# Give jhsrobo ownership of the workspace
+sudo chown jhsrobo: -R /home/jhsrobo/corews
+
 # Clone new packages
 git clone https://github.com/JHSRobo/motion_control
 git clone https://github.com/JHSRobo/pilot_gui
@@ -26,9 +29,6 @@ git clone https://github.com/JHSRobo/gripper_control
 
 # Update dependencies
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
-
-# Give jhsrobo ownership of the workspace
-sudo chown jhsrobo: -R /home/jhsrobo/corews
 
 # Install phidget packages
 curl -fsSL https://www.phidgets.com/downloads/setup_linux | bash
