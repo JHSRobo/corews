@@ -77,7 +77,7 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
 
 ## Setting up an ROV
 * Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
-* Flash a micro-sd card reader with Ubuntu Server 22.04 LTS (64-bit).
+* Flash a micro-sd card with Ubuntu Server 22.04 LTS (64-bit).
   * Listed under the "Other general-purpose OS" category.
   * Use the following settings (all others can remain default):
     * Enable SSH with password authentication.
@@ -93,6 +93,23 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
   * `sudo bash ~/corews/scripts/rov/rov_setup.bash`
 * Source .bashrc.
   * `source ~/.bashrc`
+
+## Setting up a Camera
+* Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
+* Flash a micro-SD card with Raspbian Bullseye Lite (32-bit) for the Pi Zero 2W
+	* Opt for the following settings:
+     * Enable SSH with Password Authentication
+     * Disable WiFi
+     * Hostname: JHSCamera
+     * Username: jhsrobo
+     * Password: JHSRobo
+* Install the SD card into a Raspberry Pi with ethernet capabilities.
+  * This can be a 2W with a pogo board, or a Pi 3/4/5.
+* SSH Into the Raspberry Pi
+  * `sudo apt install git`
+  * `git clone https://github.com/JHSRobo/camera_stream`
+  * `sudo bash ~/camera_stream/setup.sh`
+    * The Pi will restart and you will be disconnected
 ---
 Written by randallj24@student.jhs.net.
 If I'm in college by the time you're reading this, feel free to reach out.
