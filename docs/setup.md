@@ -107,7 +107,7 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
   * This can be a 2W with a pogo board, or a Pi 3/4/5.
 * SSH Into the Raspberry Pi
   * `sudo apt install git`
-  * `git clone https://github.com/JHSRobo/camera_stream`
+  * `git clone -b internal https://github.com/JHSRobo/camera_stream`
   * `sudo bash ~/camera_stream/setup.sh`
     * The Pi will restart and you will be disconnected
 ---
