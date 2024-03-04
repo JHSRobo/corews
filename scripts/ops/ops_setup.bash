@@ -5,6 +5,7 @@ if [[ "$(id -u)" != 0 ]]
   then echo "Please run as root"
   exit
 fi
+
 # Install helpful packages
 apt install gcc make perl curl pip wget gnupg -y
 pip install setuptools==58.2.0
@@ -34,3 +35,6 @@ sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 apt update
 apt install gh -y
+
+# Call the update script
+sudo bash /home/jhsrobo/corews/scripts/ops/ops_update.bash
