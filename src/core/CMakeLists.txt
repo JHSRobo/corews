@@ -38,6 +38,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Float32Arr.msg"
   "msg/Cam.msg"
   "msg/Sensitivity.msg"
+  "msg/RectDimensions.msg"
   "srv/AddCamera.srv"
   DEPENDENCIES std_msgs # Add packages that above messages depend on
 )

@@ -13,6 +13,7 @@ class HUD():
         self.left_align = int(self.display_width / 40)
         self.vertical_increment = int(self.display_height / 20)
 
+
     # Overlays the current camera's index and nickname
     def add_camera_details(self, frame, index, nickname):
         text = "{}: {}".format(index, nickname)
@@ -34,6 +35,9 @@ class HUD():
 
         frame = self.add_text(frame, text, position, font_size)
         return frame
+
+    
+        
 
 
     # Accepts a dictionary of sensitivity values and overlays them onto the frame
