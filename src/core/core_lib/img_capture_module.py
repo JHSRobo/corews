@@ -13,7 +13,7 @@ class ImageCaptureNode(Node):
         self.log.info("Image Capture Node Online")
 
         # Global Variables
-        self.path =  "/home/jhsrobo/ROVMIND/ros_workspace/src/img_capture/img"
+        self.path =  "C:\jhsrobo\img_capture\img"
         self.count = 1
         self.coral_count = 1
         self.bridge = CvBridge()
@@ -37,8 +37,8 @@ class ImageCaptureNode(Node):
         img = self.bridge.imgmsg_to_cv2(screenshot, desired_encoding="passthrough")
         if self.coral_mode:
             cropped_img = img[30:720, 0:880]
-            cv2.imwrite("{}/coral/{}.png".format(self.path, self.coral_count), cropped_img)
+            cv2.imwrite("{}\coral\{}.png".format(self.path, self.coral_count), cropped_img)
             self.coral_count += 1
         else:
-            cv2.imwrite("{}/{}.png".format(self.path, self.count), img)
+            cv2.imwrite("{}\other\{}.png".format(self.path, self.count), img)
             self.count +=  1
