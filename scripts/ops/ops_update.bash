@@ -17,13 +17,15 @@ rm -rf /home/jhsrobo/corews/log
 cd /home/jhsrobo/corews/src
 
 # Remove old packages
-rm -rf img_capture_2023
+rm -rf img_capture_2024
+rm -rf ops_tools
 
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
 
 # Clone new packages
-git clone https://github.com/JHSRobo/img_capture_2023
+git clone https://github.com/JHSRobo/img_capture_2024
+git clone https://github.com/JHSRobo/ops_tools
 
 # Update dependencies
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
