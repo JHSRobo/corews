@@ -17,23 +17,18 @@ rm -rf /home/jhsrobo/corews/log
 cd /home/jhsrobo/corews/src
 
 # Remove old packages
-rm -rf motion_control rov_sim pilot_gui gripper_control
+rm -rf img_capture_2024
+rm -rf ops_tools
 
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
 
 # Clone new packages
-git clone https://github.com/JHSRobo/motion_control
-git clone https://github.com/JHSRobo/pilot_gui
-git clone https://github.com/JHSRobo/gripper_control
+git clone https://github.com/JHSRobo/img_capture_2024
+git clone https://github.com/JHSRobo/ops_tools
 
 # Update dependencies
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
-sudo -u jhsrobo pip install Phidget22
-
-# Install phidget packages
-curl -fsSL https://www.phidgets.com/downloads/setup_linux | bash
-apt install -y libphidget22
 
 cd ~
 colcon build --symlink-install
