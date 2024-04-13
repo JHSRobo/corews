@@ -54,3 +54,11 @@ launch:
     pkg: "gripper_control"
     exec: "gripper_control"
     name: "gripper_control"
+- node:
+    pkg: "autocoral"
+    exec: "coral_move"
+    name: "coral_move"
+- node:
+    pkg: "autocoral"
+    exec: "target_detection"
+    name: "target_detection"
