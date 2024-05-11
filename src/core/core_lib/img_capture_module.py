@@ -37,7 +37,8 @@ class ImageCaptureNode(Node):
         img = self.bridge.imgmsg_to_cv2(screenshot, desired_encoding="passthrough")
         if self.coral_mode:
             cropped_img = img[0:505, 0:1215]
-            cv2.imwrite("{}\coral\{}.png".format(self.path, self.coral_count), cropped_img)
+            if self.coral_count % 5 == 0:
+                cv2.imwrite("{}\coral\{}.png".format(self.path, self.coral_count), cropped_img)
             self.coral_count += 1
         else:
             cv2.imwrite("{}\other\{}.png".format(self.path, self.count), img)
