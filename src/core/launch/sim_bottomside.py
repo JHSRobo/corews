@@ -55,26 +55,6 @@ def generate_launch_description():
             parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             arguments=[urdf]),
 
-        # Run Ignition Gazebo
-        ExecuteProcess(
-            cmd=['ign gazebo', LaunchConfiguration('sdf_path')],
-            output='screen',
-            shell=True ),
-
-        # Launch ROS Ignition Gazebo Bridge
-        Node(
-            package='ros_gz_bridge',
-            executable='parameter_bridge',
-            # Bridge our cmd_vel topic to the cmd_vel topic of the Ignition Simulation
-            arguments=['/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist'],
-            output='screen'),
-
-        # Launch Gazebo
-        ExecuteProcess(
-            cmd=["ign service -s /world/orca_sim/create --reqtype ignition.msgs.EntityFactory --reptype ignition.msgs.Boolean \
-                 --timeout 1000 --req 'sdf_filename: \"/home/jhsrobo/corews/src/rov_sim/urdf/rov.urdf.xml\", name: \"orca\"'"],
-                shell=True ),
-
         # Spawn Robot URDF
         #ExecuteProcess(
         #    cmd=["bash /home/jhsrobo/corews/src/core/launch/gazebo.bash"],

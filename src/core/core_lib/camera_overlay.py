@@ -1,11 +1,13 @@
 import cv2
+import numpy as np
 
 class HUD():
     def __init__(self, resolution = (1280, 720)):
         
         # Appearance Settings
         self.font = cv2.FONT_HERSHEY_DUPLEX
-        self.color = (48, 18, 196) # Jesuit Red, but in BGR instead of RGB
+        self.color = (255, 255, 255) # White
+        self.background_color = (32, 32, 32) # Gray
         self.thickness = 1
         self.display_width = resolution[0]
         self.display_height = resolution[1]
@@ -19,7 +21,7 @@ class HUD():
         font_size = 0.8
         position = (self.left_align, self.vertical_increment)
 
-        frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
+        frame = self.add_text(frame, text, position, font_size)
         return frame
 
 
@@ -80,6 +82,16 @@ class HUD():
         return frame
 
 
+    def add_photogrammetry_box(self, frame):
+        y1, y2, x1, x2 = 48, 810, 0, 1380
+        sub_img = frame[y1:y2, x1:x2]
+        darkened_rect = np.ones(frame.shape, dtype=np.uint8) * 40
+
+        frame = cv2.addWeighted(frame, 0.5, darkened_rect, 0.5, 1.0)
+        frame[y1:y2, x1:x2] = sub_img
+
+        return frame
+
 
     def leak_notification(self, frame):
         text = "LEAK DETECTED"
@@ -94,5 +106,6 @@ class HUD():
     
 
     def add_text(self, frame, text, position, font_size = 0.6):
+        frame = cv2.putText(frame, text, (position[0] + 1, position[1] + 1), self.font, font_size, self.background_color, self.thickness, self.line_type)
         frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
         return frame
