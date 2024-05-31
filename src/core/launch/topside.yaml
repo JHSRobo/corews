@@ -14,6 +14,10 @@ launch:
     pkg: "joy"
     exec: "joy_node"
     name: "joysticks"
+    remap:
+    -
+      from: "/joy"
+      to: "/xbox_joy"
     param:
     -
         name: "deadzone"
@@ -27,6 +31,12 @@ launch:
     pkg: "motion_control"
     exec: "vector_conversion"
     name: "vector_conversion"
+
+# Launch the XBox to Hotas Converter Node
+- node:
+    pkg: "motion_control"
+    exec: "hotas_conversion"
+    name: "hotas_conversion"
 
 # Node for rqt_reconfigure GUI
 - node:
