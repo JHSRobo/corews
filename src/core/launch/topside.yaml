@@ -52,6 +52,10 @@ launch:
     exec: "view_cameras"
     name: "view_cameras"
 
+- node:
+    pkg: "pilot_gui"
+    exec: "record_feed"
+    name: "record_feed"
 # Node for controlling grippers
 - node:
     pkg: "gripper_control"

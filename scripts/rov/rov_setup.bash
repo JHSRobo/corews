@@ -16,6 +16,11 @@ echo "192.168.1.100 topside" >> /etc/hosts
 echo "192.168.1.110 opside" >> /etc/hosts
 echo "192.168.1.111 bottomside" >> /etc/hosts
 
+# Disable annoying service that slows boot
+echo "[Service]" >> /etc/systemd/system/systemd-networkd-wait-online.service.d/override.conf
+echo "ExecStart=" >> /etc/systemd/system/systemd-networkd-wait-online.service.d/override.conf
+echo "ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --eth0" >> /etc/systemd/system/systemd-networkd-wait-online.service.d/override.conf
+
 # Install ROS
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
