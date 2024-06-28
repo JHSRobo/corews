@@ -8,7 +8,9 @@ fi
 
 # Install helpful packages
 apt install gcc make perl curl pip wget gnupg -y
-pip install setuptools==58.2.0
+
+# Get rid of Ubuntu error for pip
+sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
 
 # Add helpful stuff to ~/.bashrc
 echo "source /opt/ros/jazzy/setup.bash" >> /home/jhsrobo/.bashrc
