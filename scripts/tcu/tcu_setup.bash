@@ -16,6 +16,7 @@ sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
 echo "source /opt/ros/jazzy/setup.bash" >> /home/jhsrobo/.bashrc
 echo "source /home/jhsrobo/corews/install/setup.bash" >> /home/jhsrobo/.bashrc
 echo "alias topside=\"ros2 launch core topside.yaml\"" >> /home/jhsrobo/.bashrc
+echo "alias depinstall=\"rosdep install --from-paths /home/jhsrobo/corews/src --ignore-src\"" >> /home/jhsrobo/.bashrc
 
 # Add Network Shortcuts
 echo "192.168.1.100 master" >> /etc/hosts
