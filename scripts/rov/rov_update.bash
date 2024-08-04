@@ -37,4 +37,4 @@ pip install adafruit-circuitpython-bme280 adafruit-circuitpython-sht31d adafruit
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
 
-echo "Remember to source ~/.bashrc and compile!"
+echo -e "Remember to source ~/.bashrc and compile!\nADDITIONAL NOTE: After running the setup script, reboot to correctly set udev rules."

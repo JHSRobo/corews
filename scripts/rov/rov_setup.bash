@@ -38,5 +38,12 @@ apt install ros-dev-tools
 apt upgrade
 apt install ros-jazzy-desktop
 
+# Give GPIO Permissions
+groupadd gpio
+usermod -aG gpio jhsrobo
+echo 'KERNEL=="gpio*", GROUP="gpio", MODE="0660"' >> /etc/udev/rules.d/99-gpio.rules
+udevadm control --reload-rules
+udevadm trigger
+
 # Call the update script
 bash /home/jhsrobo/corews/scripts/rov/rov_update.bash
