@@ -6,10 +6,19 @@ if [[ "$(id -u)" != 0 ]]
   exit
 fi
 
+# Install helpful packages
+apt install gcc make perl curl pip wget gnupg -y
+
+# Get rid of Ubuntu error for pip
+sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
+
 # Add helpful stuff to ~/.bashrc
-echo "source /opt/ros/humble/setup.bash" >> /home/jhsrobo/.bashrc
+echo "source /opt/ros/jazzy/setup.bash" >> /home/jhsrobo/.bashrc
 echo "source /home/jhsrobo/corews/install/setup.bash" >> /home/jhsrobo/.bashrc
 echo "alias bottomside=\"ros2 launch core bottomside.yaml\"" >> /home/jhsrobo/.bashrc
+echo "alias depinstall=\"rosdep install --from-paths /home/jhsrobo/corews/src --ignore-src\"" >> /home/jhsrobo/.bashrc
+echo "alias sym=\"colcon build --symlink-install\""  >> /home/jhsrobo/.bashrc
+echo "export PYTHONWARNINGS=ignore" >> /home/jhsrobo/.bashrc
 
 # Add Network Shortcuts
 echo "192.168.1.100 topside" >> /etc/hosts
@@ -25,9 +34,9 @@ echo "ExecStart=/usr/lib/systemd/systemd-networkd-wait-online --eth0" >> /etc/sy
 curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 apt update
-apt install ros-humble-ros-base ros-dev-tools python3-pip python-dev-is-python3  -y
-pip install setuptools==58.2.0
-rosdep init
+apt install ros-dev-tools
+apt upgrade
+apt install ros-jazzy-desktop
 
 # Call the update script
 bash /home/jhsrobo/corews/scripts/rov/rov_update.bash
