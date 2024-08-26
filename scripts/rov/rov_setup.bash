@@ -10,7 +10,7 @@ fi
 apt install gcc make perl curl pip wget gnupg -y
 
 # Get rid of Ubuntu error for pip
-sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
+rm -f /usr/lib/python3.12/EXTERNALLY-MANAGED
 
 # Add helpful stuff to ~/.bashrc
 echo "source /opt/ros/jazzy/setup.bash" >> /home/jhsrobo/.bashrc
