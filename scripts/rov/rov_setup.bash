@@ -20,9 +20,6 @@ echo "alias depinstall=\"rosdep install --from-paths /home/jhsrobo/corews/src --
 echo "alias sym=\"colcon build --symlink-install\""  >> /home/jhsrobo/.bashrc
 echo "export PYTHONWARNINGS=ignore" >> /home/jhsrobo/.bashrc
 
-# Fix werid issue with listing nodes and topics by restarting daemon
-echo "ros2 daemon stop" >> /home/jhsrobo/.bashrc
-
 # Add Network Shortcuts
 echo "192.168.1.100 topside" >> /etc/hosts
 echo "192.168.1.110 opside" >> /etc/hosts
