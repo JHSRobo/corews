@@ -19,6 +19,7 @@ echo "alias bottomside=\"ros2 launch core bottomside.yaml\"" >> /home/jhsrobo/.b
 echo "alias depinstall=\"rosdep install --from-paths /home/jhsrobo/corews/src --ignore-src\"" >> /home/jhsrobo/.bashrc
 echo "alias sym=\"colcon build --symlink-install\""  >> /home/jhsrobo/.bashrc
 echo "export PYTHONWARNINGS=ignore" >> /home/jhsrobo/.bashrc
+echo "export PIP_BREAK_SYSTEM_PACKAGES=1" >> /home/jhsrobo/.bashrc
 
 # Add Network Shortcuts
 echo "192.168.1.100 topside" >> /etc/hosts
