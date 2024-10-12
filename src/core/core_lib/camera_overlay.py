@@ -80,6 +80,19 @@ class HUD():
         frame = self.add_text(frame, text, position, font_size)
         
         return frame
+        
+    def add_orientation_info(self, frame, yaw, pitch, roll):
+
+        # Endpoints for the roll/pitch line
+        startX = int(self.display_width / 2 - 100 + abs(roll / 90 * 100))
+        startY = int(self.display_height / 2 + roll + pitch)
+        endX = int(self.display_width / 2 + 100 - abs(roll / 90 * 100))
+        endY = int(self.display_height / 2 - roll + pitch)
+
+        # Draw roll/pitch line
+        frame = cv2.line(frame, (startX, startY), (endX, endY), (0, 255, 0), 5)
+
+        return frame
 
 
     def add_photogrammetry_box(self, frame):
