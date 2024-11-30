@@ -1,0 +1,10 @@
+launch:
+
+# Arguments for the various nodes.
+# These can be set from cmd line if necessary
+
+# Node to capture camera feed
+- node:
+    pkg: "img_capture"
+    exec: "img_capture"
+    name: "img_capture"

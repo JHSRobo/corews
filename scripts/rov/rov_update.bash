@@ -26,7 +26,7 @@ git clone https://github.com/JHSRobo/sensor_interface
 
 # Update dependencies
 sudo -u jhsrobo rosdep update
-sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:jammy
+sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:noble
 
 # Install Packages that are NOT RECOGNIZED BY ROSDEP
 # You can find lists of all rosdep recognized packages here:

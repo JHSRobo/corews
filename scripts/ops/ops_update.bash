@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Check sudo perms
@@ -20,10 +21,7 @@ cd /home/jhsrobo/corews/src
 rm -rf motion_control rov_sim pilot_gui gripper_control
 
 # Clone new packages
-git clone https://github.com/JHSRobo/motion_control
-git clone https://github.com/JHSRobo/rov_sim
-git clone https://github.com/JHSRobo/pilot_gui
-git clone https://github.com/JHSRobo/gripper_control
+git clone https://github.com/JHSRobo/img_capture
 
 # Update dependencies
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:noble
