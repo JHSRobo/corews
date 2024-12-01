@@ -26,6 +26,7 @@ git clone https://github.com/JHSRobo/pilot_gui
 git clone https://github.com/JHSRobo/gripper_control
 
 # Update dependencies
+cd /home/jhsrobo/corews
 sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --os=ubuntu:noble
 
 # Give jhsrobo ownership of the workspace

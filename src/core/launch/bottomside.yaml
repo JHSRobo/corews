@@ -35,6 +35,7 @@ launch:
     exec: "leak_sensor"
     name: "leak_sensor"
 
+# Node to communicate with PCAs
 - node:
     pkg: "thruster_interface"
     exec: "thrusters"
