@@ -8,3 +8,9 @@ launch:
     pkg: "img_capture"
     exec: "img_capture"
     name: "img_capture"
+
+# Node for rqt_reconfigure gui
+- node:
+    pkg: "rqt_reconfigure"
+    exec: "rqt_reconfigure"
+    name: "rqt_reconfigure"

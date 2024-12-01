@@ -5,7 +5,7 @@ src/gpio_interface
 src/thruster_interface
 src/sensor_interface
 src/gripper_control
-src/autocoral
+src/img_capture
 build
 log
 install
