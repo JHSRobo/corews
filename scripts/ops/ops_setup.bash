@@ -45,4 +45,4 @@ apt update
 apt install gh -y
 
 # Call the update script
-sudo bash /home/jhsrobo/corews/scripts/tcu/ops_update.bash
+sudo bash /home/jhsrobo/corews/scripts/ops/ops_update.bash
