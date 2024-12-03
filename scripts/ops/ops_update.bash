@@ -18,7 +18,7 @@ rm -rf /home/jhsrobo/corews/log
 cd /home/jhsrobo/corews/src
 
 # Remove old packages
-rm -rf motion_control rov_sim pilot_gui gripper_control
+rm -rf motion_control rov_sim pilot_gui gripper_control img_capture
 
 # Clone new packages
 git clone https://github.com/JHSRobo/img_capture
@@ -28,10 +28,5 @@ sudo -u jhsrobo rosdep install --from-paths src --ignore-src --rosdistro=${ROS_D
 
 # Give jhsrobo ownership of the workspace
 sudo chown jhsrobo: -R /home/jhsrobo/corews
-
-# Install phidget packages
-curl -fsSL https://www.phidgets.com/downloads/setup_linux | bash
-apt install -y libphidget22
-pip install Phidget22
 
 echo "Remember to source ~/.bashrc and compile!"

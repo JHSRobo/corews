@@ -6,35 +6,34 @@ While the following directions are thorough, they do not detail every step of th
 ## Test Setups
 The ideal test setup is as follows:
 
-- Ubuntu 22.04 LTS Desktop running natively on a laptop
-- Ubuntu 22.04 LTS Server running on a testbench.
+- Ubuntu 24.04.1 LTS Desktop running natively on a laptop
+- Ubuntu 24.04.1 LTS Server running on a testbench.
 
 If this is unattainable, there are several other ways to simulate topside.
 
-* Ubuntu 22.04 LTS in WSL on Windows
+* Ubuntu 24.04.1 LTS in WSL on Windows
 
-* Ubuntu 22.04 LTS in a VMWare Virtual Machine on Windows
+* Ubuntu 24.04.1 LTS in a VMWare Virtual Machine on Windows
 
-* Ubuntu 22.04 LTS in a UTM Virtual Machine on MacOS
+* Ubuntu 24.04.1 LTS in a UTM Virtual Machine on MacOS
 
-Booting (or dual-booting) Ubuntu natively is always preferred, because network interfaces can be difficult in virtual machines and WSL.
+Booting (or dual-booting) Ubuntu natively is always preferred, because network interfaces can be difficult in virtual machines and WSL. For anyone attempting to use WSL, VMWare, or any other Windows alternative, you can merge networks with the Windows tool Hyper-V. 
 
 UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is relatively untested for the purposes of TCU virtualization, and WSL users will need to keep in mind that all of their text editing must be done through a terminal text editor like [NeoVim](https://neovim.io/) or with the [WSL Extension for VSCode](https://code.visualstudio.com/docs/remote/wsl).
 
 ## Setting up a TCU
 ### Part 1 (Production Hardware)
-* Flash a USB drive with [Ubuntu 22.04 LTS Desktop](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64) using [Balena Etcher](https://etcher.balena.io/).
-* Plug the USB drive into the NUC.
-* Access the NUC BIOS (Press F2 during power-on)
+* Flash a USB drive with [Ubuntu 24.04.1 LTS Desktop](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64) using [Balena Etcher](https://etcher.balena.io/).
+* Plug the USB drive into the laptop.
+* Access BIOS (Press F2 during power-on)
   * Disable Secure Boot.
-  * Set After Power Failure to Power On.
   * If necessary, edit the boot order to prioritize the thumb-drive over Windows.
   * Save your changes and exit.
 
 ### Part 1 (Dual-Booting)
 * [Shrink a disk partition](https://learn.microsoft.com/en-us/windows-server/storage/disk-management/shrink-a-basic-volume) by 25-35 GB.
 * If you have bitlocker encryption, disable it.
-* Flash a USB drive with [Ubuntu 22.04 LTS Desktop](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64) using [Balena Etcher](https://etcher.balena.io/).
+* Flash a USB drive with [Ubuntu 24.04.1 LTS Desktop](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64) using [Balena Etcher](https://etcher.balena.io/).
 * Plug the USB drive into the laptop.
 * Access your laptop BIOS (Button varies by manufacturer)
   * (OPTIONAL) Disable Secure Boot.
@@ -48,7 +47,7 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
 * Launch WSL.
 
 ### Part 1 (Virtualization)
-* Download an [Ubuntu 22.04 LTS Desktop](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64) ISO.
+* Download an [Ubuntu 24.04.1 LTS Desktop](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64) ISO.
 * Create a virtual machine with the ISO.
   * Steps will vary based on virtualization software. Use of VirtualBox is not recommended.
 * Boot the virtual machine and begin the installation process. 
@@ -61,7 +60,7 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
 * Opt for a minimal installation, without installing third-party software.
 * When you reach the "Who are you?" screen:
   * Your name: JHSRobo
-  * Your computer's name: JHSRobo
+  * Your computer's name: topside
   * Pick a username: jhsrobo
   * Choose a password: JHSRobo
 
@@ -77,7 +76,7 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
 
 ## Setting up an ROV
 * Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
-* Flash a micro-sd card reader with Ubuntu Server 22.04 LTS (64-bit).
+* Flash a micro-sd card reader with Ubuntu Server 24.04.1 LTS (64-bit).
   * Listed under the "Other general-purpose OS" category.
   * Use the following settings (all others can remain default):
     * Enable SSH with password authentication.
@@ -87,6 +86,8 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
 * Slot the micro-sd card into a testbench.
 * SSH to the testbench.
   * You will need to check its IP on the router page.
+* Set the new hostname to bottomside.
+  * `sudo hostnamectl set-hostname bottomside` 
 * Clone the corews repository in your home directory.
   * `git clone https://github.com/JHSRobo/corews`
 * Run the setup command.
@@ -95,6 +96,8 @@ UTM seems to be a seamless virtualization experience on MacOS, though. VMWare is
   * `source ~/.bashrc`
 ---
 Written by randallj24@student.jhs.net.
-If I'm in college by the time you're reading this, feel free to reach out.
+Updated by fringsj26@student.jhs.net
 
-Last Updated 1/20/24
+If we're in college by the time you're reading this, feel free to reach out.
+
+Last Updated 12/02/24
