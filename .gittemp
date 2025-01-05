@@ -6,7 +6,6 @@ src/thruster_interface
 src/sensor_interface
 src/gripper_control
 src/img_capture
-src/shipwreck_measure
 build
 log
 install

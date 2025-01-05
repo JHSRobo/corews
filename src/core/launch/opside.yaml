@@ -6,8 +6,20 @@ launch:
 # Node to capture camera feed
 - node:
     pkg: "img_capture"
+    exec: "find_cameras"
+    name: "find_cameras"
+
+# Node to transform different camera feeds into
+- node:
+    pkg: "img_capture"
     exec: "img_capture"
     name: "img_capture"
+
+# Node for measuring shipwreck
+- node:
+    pkg: "shipwreck_measure"
+    exec: "measure"
+    name: "measure"
 
 # Node for rqt_reconfigure gui
 - node:
