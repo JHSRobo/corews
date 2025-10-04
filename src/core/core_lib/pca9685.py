@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIO
+from gpiozero import LED
 import smbus2
 
 # Set values to be written to registers
@@ -60,10 +60,6 @@ class PCA9685:
         self.extclk = 25e6 # BlueRobotics uses 24.567e6, we have dif clock
         self._bus = smbus2.SMBus(bus)
         self.initialize()
-        # Configure output enable pin
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(26, GPIO.OUT)
-        GPIO.setwarnings(False)
 
     def initialize(self):
 
@@ -126,12 +122,12 @@ class PCA9685:
 
     # set OE pin LOW
     def output_enable(self):
-        GPIO.output(26, GPIO.LOW)
+        LED(26).off()
         return
 
     # set OE pin HIGH
     def output_disable(self):
-        GPIO.output(26, GPIO.HIGH)
+        LED(26).on()
         return
 
     # get the state of the output enable pin
