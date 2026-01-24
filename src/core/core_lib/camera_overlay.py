@@ -1,8 +1,10 @@
 import cv2
 import numpy as np
+from ultralytics import YOLO
+import torch
 
 class HUD():
-    def __init__(self, resolution = (1920, 1080)):
+    def __init__(self, resolution = (1280, 720)):
         
         # Appearance Settings
         self.font = cv2.FONT_HERSHEY_DUPLEX
@@ -14,6 +16,11 @@ class HUD():
         self.line_type = cv2.LINE_AA
         self.left_align = int(self.display_width / 40)
         self.vertical_increment = int(self.display_height / 20)
+        self.model = YOLO("best.pt")
+        if torch.cuda.is_available():
+            self.gpu = True
+        else:
+            self.gpu = False
 
     # Overlays the current camera's index and nickname
     def add_camera_details(self, frame, index, nickname):
@@ -23,22 +30,6 @@ class HUD():
 
         frame = self.add_text(frame, text, position, font_size)
         return frame
-
-    def add_second_camera(self, big_frame, small_frame):
-        big_dimensions = big_frame.shape 
-        big_width = big_dimensions[1]
-
-        small_dimensions = (480, 270) # 1920x1080 scaled down by a factor of 0.25
-        small_frame = cv2.resize(small_frame, small_dimensions, interpolation=cv2.INTER_AREA)
-
-        small_dimensions = small_frame.shape
-        small_height = dimensions[0]
-        small_width = dimensions[1]
-
-        big_frame[0:small_height, big_width-small_width:big_width] = small_frame_resized
-
-        return big_frame
-
 
 
     # Overlays the current thruster status onto the frame
@@ -71,12 +62,12 @@ class HUD():
         
         # Add the header
         font_size = 0.6
-        position = (self.left_align, 4 * self.vertical_increment)
+        position = (self.left_align, 5 * self.vertical_increment)
         frame = self.add_text(frame, "Sensitivity:", position, font_size)
 
         # Add the individual sensitivies:
         font_size = 0.5
-        counter = 4.66
+        counter = 5.66
         for key in sensitivities:
             position = (self.left_align + 20, int(counter * self.vertical_increment))
             text = "{}: {}".format(key, sensitivities[key])
@@ -138,3 +129,11 @@ class HUD():
         frame = cv2.putText(frame, text, (position[0] + 1, position[1] + 1), self.font, font_size, self.background_color, self.thickness, self.line_type)
         frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
         return frame
+
+    def crab_model(self, frame):
+        if self.gpu:
+            results = self.model(frame, device=0)
+        else:
+            results = self.model(frame, device="cpu")
+        annotated_frame = results[0].plot()
+        return annotated_frame
