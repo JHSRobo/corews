@@ -16,7 +16,7 @@ class HUD():
         self.line_type = cv2.LINE_AA
         self.left_align = int(self.display_width / 40)
         self.vertical_increment = int(self.display_height / 20)
-        self.model = YOLO("best.pt")
+        self.model = YOLO("/home/jhsrobo/corews/src/core/core_lib/best.pt")
         if torch.cuda.is_available():
             self.gpu = True
         else:
