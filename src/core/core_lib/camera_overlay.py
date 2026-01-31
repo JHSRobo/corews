@@ -130,10 +130,27 @@ class HUD():
         frame = cv2.putText(frame, text, position, self.font, font_size, self.color, self.thickness, self.line_type)
         return frame
 
+    
     def crab_model(self, frame):
         if self.gpu:
-            results = self.model(frame, device=0)
+            results = self.model(frame, device=0, conf = 0.5)
         else:
-            results = self.model(frame, device="cpu")
+            results = self.model(frame, device="cpu", conf = 0.5)
         annotated_frame = results[0].plot()
+        predictions = results.pred[0]
+        
+        class_ids = predictions[:, -1].cpu().numpy()
+        confidence_scores = predictions[:, 4].cpu().numpy()
+        
+        target_class_id = 0
+        min_confidence = 0.5
+        
+        filtered_detections = predictions[(class_ids == target_class_id) & (confidence_scores >= min_confidence)]
+        num_filtered_detections = len(filtered_detections)
+        
+        font_size = 0.6
+        position = (self.left_align, 7 * self.vertical_increment)
+        text = "Number of European Green Crabs: " + str(num_filtered_detections)
+        annotated_frame = self.add_text(frame, text, position, font_size)
+        
         return annotated_frame
