@@ -28,6 +28,11 @@ launch:
     exec: "vector_conversion"
     name: "vector_conversion"
 
+- node:
+    pkg: "motion_control"
+    exec: "midi_control"
+    name: "midi_control"
+
 # Node for rqt_reconfigure GUI
 - node:
     pkg: "rqt_reconfigure"

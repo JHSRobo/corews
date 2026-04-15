@@ -17,11 +17,10 @@ rm -rf /home/jhsrobo/corews/log
 cd /home/jhsrobo/corews/src
 
 # Remove old packages
-rm -rf motion_control rov_sim pilot_gui gripper_control
+rm -rf motion_control pilot_gui gripper_control
 
 # Clone new packages
 git clone https://github.com/JHSRobo/motion_control
-git clone https://github.com/JHSRobo/rov_sim
 git clone https://github.com/JHSRobo/pilot_gui
 git clone https://github.com/JHSRobo/gripper_control
 
