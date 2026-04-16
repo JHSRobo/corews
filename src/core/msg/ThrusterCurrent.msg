@@ -1,0 +1,8 @@
+float64 thruster1_current
+float64 thruster2_current
+float64 thruster3_current
+float64 thruster4_current
+float64 thruster5_current
+float64 thruster6_current
+float64 thruster7_current
+float64 thruster8_current
