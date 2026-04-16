@@ -19,6 +19,11 @@ launch:
     exec: "servo_controller"
     name: "servo_controller"
 
+# Sensor nodes
+- node:
+    pkg: "sensor_interface"
+    exec: "thrusters_monitor"
+    name: "thrusters_monitor"
 
 # Node to communicate with PCAs
 - node:
