@@ -6,6 +6,7 @@ src/thruster_interface
 src/sensor_interface
 src/gripper_control
 src/camera_stream
+src/stereovision
 build
 log
 install
