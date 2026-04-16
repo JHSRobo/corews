@@ -82,6 +82,15 @@ class HUD():
         frame = self.add_text(frame, text, position, font_size)
         
         return frame
+    
+
+    #displays raspberry pi temperature over the camera stream
+    def add_cpu_temperature(self, frame, cpu_temp):
+        font_size = 0.6
+        position = (self.left_align, 10 * self.vertical_increment)
+        text = "Temp: " + str(cpu_temp)
+        frame = self.add_text(frame, text, position, font_size)
+        return frame
 
 
     # Accepts a dictionary of sensitivity values and overlays them onto the frame
