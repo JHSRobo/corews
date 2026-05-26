@@ -167,17 +167,19 @@ class HUD():
         return frame
 
     
-    def crab_model(self, frame): 
+    def crab_model(self, frame):
+        x = 960
+        y = 540
         if self.gpu:
-            results = self.model(frame, device=0, conf=0.5)
+            cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
+            results = self.model(frame[y:, x:, :], device=0, conf=0.5)
         else:
-            results = self.model(frame, device="cpu", conf=0.5)
+            results = self.model(frame[y:, x:, :], device="cpu", conf=0.5)
 
         result = results[0]
-
+        
         if result.boxes is None or len(result.boxes) == 0:
             num_filtered_detections = 0
-            annotated_frame = frame.copy()
         else:
             boxes = result.boxes
             class_ids = boxes.cls
@@ -190,19 +192,19 @@ class HUD():
 
             filtered_boxes = boxes[mask]
 
-            num_filtered_detections = mask.sum().item()
+            num_filtered_detections = int(mask.sum().item())
 
             result.boxes = filtered_boxes
-            annotated_frame = result.plot()
-
+            small_annotated_frame = result.plot()
+            frame[y:, x:, :] = small_annotated_frame
 
         font_size = 0.6
-        position = (self.left_align, 9 * self.vertical_increment)
+        position = (self.left_align, 10 * self.vertical_increment)
         text = "Number of European Green Crabs: " + str(num_filtered_detections)
+        
+        frame = self.add_text(frame, text, position, font_size)
 
-        annotated_frame = self.add_text(annotated_frame, text, position, font_size)
-
-        return annotated_frame
+        return frame
          
        
 
