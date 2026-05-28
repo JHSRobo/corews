@@ -168,8 +168,8 @@ class HUD():
 
     
     def crab_model(self, frame):
-        x = 960
-        y = 540
+        x = 816
+        y = 459
         if self.gpu:
             cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
             results = self.model(frame[y:, x:, :], device=0, conf=0.5)
