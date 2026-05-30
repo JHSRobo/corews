@@ -172,9 +172,9 @@ class HUD():
         y = 459
         if self.gpu:
             cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
-            results = self.model(frame[y:, x:, :], device=0, conf=0.5)
+            results = self.model(frame[y:, x:, :], device=0, conf=0.7)
         else:
-            results = self.model(frame[y:, x:, :], device="cpu", conf=0.5)
+            results = self.model(frame[y:, x:, :], device="cpu", conf=0.7)
 
         result = results[0]
         
@@ -182,21 +182,34 @@ class HUD():
             num_filtered_detections = 0
         else:
             boxes = result.boxes
+
             class_ids = boxes.cls
             confs = boxes.conf
-
             target_class_id = 0
             min_confidence = 0.5
 
-            mask = (class_ids == target_class_id) & (confs >= min_confidence)
+            mask = (
+                    (class_ids == target_class_id) &
+                    (confs >= min_confidence)
+                    )
 
             filtered_boxes = boxes[mask]
+            for box in filtered_boxes.xyxy:
+                x1, y1, x2, y2 = box.tolist()
 
-            num_filtered_detections = int(mask.sum().item())
+                x = int(x1)
+                y = int(y1)
+                w = int(x2 - x1)
+                h = int(y2 - y1)
+                bbox = (x, y, w, h)
 
-            result.boxes = filtered_boxes
-            small_annotated_frame = result.plot()
-            frame[y:, x:, :] = small_annotated_frame
+                cv2.rectangle(
+                    frame,
+                    (x, y),
+                    (x + w, y + h),
+                    (255, 0, 0),
+                    2
+                )
 
         font_size = 0.6
         position = (self.left_align, 10 * self.vertical_increment)
