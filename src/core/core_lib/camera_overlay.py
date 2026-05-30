@@ -17,7 +17,14 @@ class HUD():
         self.left_align = int(self.display_width / 40)
         self.vertical_increment = int(self.display_height / 20)
         self.model = YOLO("/home/jhsrobo/corews/src/core/core_lib/best.pt")
+        self.trackers = cv2.legacy.MultiTracker_create()
+        self.tracker_type = "csrt"
+        self.tracker_creator = OPENCV_OBJECT_TRACKERS[tracker_type]
 
+        self.frame_count = 0
+        self.detection_interval = 3
+        self.prev_boxes = []
+        
         if torch.cuda.is_available():
             self.gpu = True
         else:
@@ -170,46 +177,68 @@ class HUD():
     def crab_model(self, frame):
         x = 816
         y = 459
-        if self.gpu:
-            cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
-            results = self.model(frame[y:, x:, :], device=0, conf=0.7)
-        else:
-            results = self.model(frame[y:, x:, :], device="cpu", conf=0.7)
-
-        result = results[0]
         
-        if result.boxes is None or len(result.boxes) == 0:
-            num_filtered_detections = 0
-        else:
-            boxes = result.boxes
+        cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
 
-            class_ids = boxes.cls
-            confs = boxes.conf
-            target_class_id = 0
-            min_confidence = 0.5
+        if self.frame_count % self.detection_interval == 0:
+            if self.gpu:
+                results = self.model(frame[y:, x:, :], device=0, conf=0.7)
+            else:
+                results = self.model(frame[y:, x:, :], device="cpu", conf=0.7)
 
-            mask = (
-                    (class_ids == target_class_id) &
-                    (confs >= min_confidence)
+            result = results[0]
+
+            trackers = create_multitracker()
+
+            if result.boxes is not None and len(result.boxes) > 0:
+
+                boxes = result.boxes
+
+                class_ids = boxes.cls
+                confs = boxes.conf
+
+                target_class_id = 0
+                min_confidence = 0.5
+
+                mask = ((class_ids == target_class_id) & (confs >= min_confidence))
+                filtered_boxes = boxes[mask]
+
+                prev_boxes = []
+
+                for box in filtered_boxes.xyxy:
+
+                    x1, y1, x2, y2 = box.tolist()
+
+                    xx = int(x1)
+                    yy = int(y1)
+                    ww = int(x2 - x1)
+                    hh = int(y2 - y1)
+
+                    bbox = (xx, yy, ww, hh)
+
+                    prev_boxes.append(bbox)
+
+                    tracker = tracker_creator()
+
+                    trackers.add(
+                        tracker,
+                        frame,
+                        bbox
                     )
 
-            filtered_boxes = boxes[mask]
-            for box in filtered_boxes.xyxy:
-                x1, y1, x2, y2 = box.tolist()
+                    cv2.rectangle(frame, (x+xx, y+yy), (x + xx + w, y + yy + h), (255, 0, 255), 2)
+                num_filtered_detections = len(filtered_boxes.xyxy)
+                    
+        else:
+            success, boxes = trackers.update(frame)
+            if not success:
+                print("Tracking failure")
+                boxes = prev_boxes
 
-                x = int(x1)
-                y = int(y1)
-                w = int(x2 - x1)
-                h = int(y2 - y1)
-                bbox = (x, y, w, h)
-
-                cv2.rectangle(
-                    frame,
-                    (x, y),
-                    (x + w, y + h),
-                    (255, 0, 0),
-                    2
-                )
+            for box in boxes:
+                xx, yy, ww, hh = [int(v) for v in box]
+                cv2.rectangle(frame, (x+xx, y+yy), (x + xx + w, y + yy + h), (255, 0, 255), 2)
+            num_filtered_detections = len(boxes)
 
         font_size = 0.6
         position = (self.left_align, 10 * self.vertical_increment)
@@ -219,8 +248,6 @@ class HUD():
 
         return frame
          
-       
-
     def overlay_3d(self, frame, roll, pitch):
 
         R = self.rotation_matrix(roll, pitch)
