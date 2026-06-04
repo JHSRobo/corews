@@ -17,12 +17,14 @@ class HUD():
         self.left_align = int(self.display_width / 40)
         self.vertical_increment = int(self.display_height / 20)
         self.model = YOLO("/home/jhsrobo/corews/src/core/core_lib/best.pt")
+
+        self.OPENCV_OBJECT_TRACKERS = {"csrt": cv2.legacy.TrackerCSRT_create, "kcf": cv2.legacy.TrackerKCF_create, "mil": cv2.legacy.TrackerMIL_create}
         self.trackers = cv2.legacy.MultiTracker_create()
         self.tracker_type = "csrt"
-        self.tracker_creator = OPENCV_OBJECT_TRACKERS[tracker_type]
+        self.tracker_creator = self.OPENCV_OBJECT_TRACKERS[self.tracker_type]
 
         self.frame_count = 0
-        self.detection_interval = 3
+        self.detection_interval = 120
         self.prev_boxes = []
         
         if torch.cuda.is_available():
@@ -175,8 +177,9 @@ class HUD():
 
     
     def crab_model(self, frame):
-        x = 816
-        y = 459
+        x = 0 #816
+        y = 0 #459
+        num_filtered_detections = 0
         
         cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
 
@@ -188,7 +191,7 @@ class HUD():
 
             result = results[0]
 
-            trackers = create_multitracker()
+            self.trackers = cv2.legacy.MultiTracker_create()
 
             if result.boxes is not None and len(result.boxes) > 0:
 
@@ -202,11 +205,8 @@ class HUD():
 
                 mask = ((class_ids == target_class_id) & (confs >= min_confidence))
                 filtered_boxes = boxes[mask]
-
-                prev_boxes = []
-
+                self.prev_boxes = []
                 for box in filtered_boxes.xyxy:
-
                     x1, y1, x2, y2 = box.tolist()
 
                     xx = int(x1)
@@ -215,31 +215,26 @@ class HUD():
                     hh = int(y2 - y1)
 
                     bbox = (xx, yy, ww, hh)
+                    self.prev_boxes.append(bbox)
 
-                    prev_boxes.append(bbox)
+                    tracker = self.tracker_creator()
+                    self.trackers.add(tracker, frame, bbox)
 
-                    tracker = tracker_creator()
-
-                    trackers.add(
-                        tracker,
-                        frame,
-                        bbox
-                    )
-
-                    cv2.rectangle(frame, (x+xx, y+yy), (x + xx + w, y + yy + h), (255, 0, 255), 2)
+                    cv2.rectangle(frame, (x+xx, y+yy), (x + xx + ww, y + yy + hh), (255, 0, 255), 2)
                 num_filtered_detections = len(filtered_boxes.xyxy)
                     
         else:
-            success, boxes = trackers.update(frame)
+            success, boxes = self.trackers.update(frame)
             if not success:
                 print("Tracking failure")
-                boxes = prev_boxes
+                boxes = self.prev_boxes
 
             for box in boxes:
                 xx, yy, ww, hh = [int(v) for v in box]
-                cv2.rectangle(frame, (x+xx, y+yy), (x + xx + w, y + yy + h), (255, 0, 255), 2)
+                cv2.rectangle(frame, (x+xx, y+yy), (x + xx + ww, y + yy + hh), (255, 0, 255), 2)
             num_filtered_detections = len(boxes)
 
+        self.frame_count += 1
         font_size = 0.6
         position = (self.left_align, 10 * self.vertical_increment)
         text = "Number of European Green Crabs: " + str(num_filtered_detections)
