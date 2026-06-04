@@ -183,12 +183,13 @@ class HUD():
             results = self.model.track(
                     frame[roi_y:, roi_x:, :],
                     device="cpu",
-                    conf=0.7,
+                    conf=0.25,
                     persist=True,
                     tracker="bytetrack.yaml"
             )
 
         result = results[0]
+        num_filtered_detections = 0
         
         if result.boxes is not None and len(result.boxes) > 0:
             boxes = result.boxes
@@ -196,7 +197,7 @@ class HUD():
             class_ids = boxes.cls
             confs = boxes.conf
             target_class_id = 0
-            min_confidence = 0.5
+            min_confidence = 0.7
 
             mask = (
                     (class_ids == target_class_id) &
@@ -204,8 +205,6 @@ class HUD():
                     )
 
             filtered_boxes = boxes[mask]
-
-            num_filtered_detections = 0
 
             track_ids = None
             if filtered_boxes.id is not None:
