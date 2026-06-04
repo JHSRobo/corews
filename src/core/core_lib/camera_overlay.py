@@ -168,19 +168,31 @@ class HUD():
 
     
     def crab_model(self, frame):
-        x = 816
-        y = 459
+        x = 0
+        y = 0
+        cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
         if self.gpu:
-            cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
-            results = self.model(frame[y:, x:, :], device=0, conf=0.7)
+            results = self.model.track(
+                    frame[y:, x:, :],
+                    device=0,
+                    conf=0.7,
+                    persist=True,
+                    tracker="bytetrack.yaml"
+            )
         else:
-            results = self.model(frame[y:, x:, :], device="cpu", conf=0.7)
+            results = self.model.track(
+                    frame[y:, x:, :],
+                    device="cpu",
+                    conf=0.7,
+                    persist=True,
+                    tracker="bytetrack.yaml"
+            )
 
         result = results[0]
+
+        num_filtered_detections = 0
         
-        if result.boxes is None or len(result.boxes) == 0:
-            num_filtered_detections = 0
-        else:
+        if result.boxes is not None and len(result.boxes) > 0:
             boxes = result.boxes
 
             class_ids = boxes.cls
@@ -194,6 +206,12 @@ class HUD():
                     )
 
             filtered_boxes = boxes[mask]
+            num_filtered_detections = len(filtered_boxes)
+
+            track_ids = None
+            if filtered_boxes.id is not None:
+                track_ids = filtered_boxes.id.int().cpu().tolist()
+                
             for box in filtered_boxes.xyxy:
                 x1, y1, x2, y2 = box.tolist()
 
@@ -201,7 +219,6 @@ class HUD():
                 y = int(y1)
                 w = int(x2 - x1)
                 h = int(y2 - y1)
-                bbox = (x, y, w, h)
 
                 cv2.rectangle(
                     frame,
