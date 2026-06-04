@@ -168,12 +168,12 @@ class HUD():
 
     
     def crab_model(self, frame):
-        x = 0
-        y = 0
-        cv2.rectangle(frame, (x, y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
+        roi_x = 0
+        roi_y = 0
+        cv2.rectangle(frame, (roi_x, roi_y), (frame.shape[1], frame.shape[0]), (255, 255, 0), 3)
         if self.gpu:
             results = self.model.track(
-                    frame[y:, x:, :],
+                    frame[roi_y:, roi_x:, :],
                     device=0,
                     conf=0.7,
                     persist=True,
@@ -181,7 +181,7 @@ class HUD():
             )
         else:
             results = self.model.track(
-                    frame[y:, x:, :],
+                    frame[roi_y:, roi_x:, :],
                     device="cpu",
                     conf=0.7,
                     persist=True,
@@ -189,8 +189,6 @@ class HUD():
             )
 
         result = results[0]
-
-        num_filtered_detections = 0
         
         if result.boxes is not None and len(result.boxes) > 0:
             boxes = result.boxes
@@ -206,11 +204,16 @@ class HUD():
                     )
 
             filtered_boxes = boxes[mask]
-            num_filtered_detections = len(filtered_boxes)
+
+            num_filtered_detections = 0
 
             track_ids = None
             if filtered_boxes.id is not None:
+                active_ids = set(filtered_boxes.id.int().cpu().tolist())
+                num_filtered_detections = len(active_ids)
                 track_ids = filtered_boxes.id.int().cpu().tolist()
+            else:
+                num_filtered_detections = 0
                 
             for box in filtered_boxes.xyxy:
                 x1, y1, x2, y2 = box.tolist()
@@ -222,8 +225,8 @@ class HUD():
 
                 cv2.rectangle(
                     frame,
-                    (x, y),
-                    (x + w, y + h),
+                    (roi_x+x, roi_y+y),
+                    (roi_x+x + w, roi_y+y + h),
                     (255, 0, 0),
                     2
                 )
@@ -233,10 +236,7 @@ class HUD():
         text = "Number of European Green Crabs: " + str(num_filtered_detections)
         
         frame = self.add_text(frame, text, position, font_size)
-
         return frame
-         
-       
 
     def overlay_3d(self, frame, roll, pitch):
 
