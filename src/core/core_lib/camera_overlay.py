@@ -243,7 +243,7 @@ class HUD():
                     frame,
                     (roi_x+x, roi_y+y),
                     (roi_x+x + w, roi_y+y + h),
-                    (255, 0, 0),
+                    (0, 0, 255),
                     2
                 )
 
