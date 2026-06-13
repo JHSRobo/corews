@@ -49,6 +49,22 @@ class HUD():
         self.pos_y = resolution[1]//2
 
 
+    # Adds a bar to the middle of the camera frame so that the pilot can line up for depth sensor measurement
+    def add_horizontal_bar(self, frame):
+        height, width = frame.shape[:2]
+        mid_x = width // 2
+        mid_y = height // 2
+
+        start_point = (mid_x - 100, mid_y)
+        end_point = (mid_x + 100, mid_y)
+
+        color = (0, 255, 0)
+        thickness = 2
+
+        cv2.line(frame, start_point, end_point, color, thickness)
+
+        return frame
+
     # Overlays the current camera's index and nickname
     def add_camera_details(self, frame, index, nickname):
         text = "{}: {}".format(index, nickname)
@@ -57,6 +73,7 @@ class HUD():
 
         frame = self.add_text(frame, text, position, font_size)
         return frame
+
 
 
     # Overlays the current thruster status onto the frame
